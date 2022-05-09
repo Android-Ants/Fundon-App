@@ -36,7 +36,7 @@ public class LoginRepo {
     public void userSignIn(User user, Context context) {
 
         Map<String, String> params = new HashMap<>();
-        params.put("userName", user.getEmail());
+        params.put("userName", user.getUserName());
         params.put("password", user.getPassword());
 
         String url = "https://codeq-flipr.herokuapp.com/api/auth/signin";

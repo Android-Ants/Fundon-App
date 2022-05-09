@@ -18,7 +18,7 @@ import com.mysocial.flipr.viewmodels.SignInViewModel;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextInputEditText email, password;
+    TextInputEditText userName, password;
     Button login;
     SignInViewModel viewModel;
 
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        email = findViewById(R.id.emailsignin);
+        userName = findViewById(R.id.usernamesignin);
         password = findViewById(R.id.passwordsignin);
         login = findViewById(R.id.login);
         initViewModel();
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signInUser() {
-        User user = new User(email.getText().toString(), password.getText().toString());
+        User user = new User(userName.getText().toString(), password.getText().toString());
         viewModel.signInUser(user, this);
     }
 

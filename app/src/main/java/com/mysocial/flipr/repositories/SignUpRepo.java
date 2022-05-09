@@ -35,7 +35,7 @@ public class SignUpRepo {
 
     public void usercreate(User user, Context context) {
         Map<String, String> params = new HashMap<>();
-        params.put("userName", user.getName());
+        params.put("userName", user.getUserName());
         params.put("email", user.getEmail());
         params.put("password", user.getPassword());
 

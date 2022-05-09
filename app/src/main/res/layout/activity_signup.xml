@@ -32,7 +32,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="550dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#FFFFFF"
@@ -72,7 +72,7 @@
                 android:layout_marginEnd="8dp"
                 android:background="#F9FAFC"
                 android:elevation="7dp"
-                android:textColorHint="@color/black"
+                android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
                 app:layout_constraintBottom_toTopOf="@+id/TILemailsignup"
@@ -104,7 +104,7 @@
                 android:elevation="7dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
-                app:hintTextColor="#98C844"
+                app:hintTextColor="#6765E8"
                 app:layout_constraintBottom_toTopOf="@+id/TILpasswordsignup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -133,8 +133,8 @@
                 android:background="#F9FAFC"
                 android:elevation="7dp"
                 android:textColorHint="#707070"
-                app:boxStrokeColor="#98C844"
-                app:hintTextColor="#98C844"
+                app:boxStrokeColor="#6765E8"
+                app:hintTextColor="#6765E8"
                 app:layout_constraintBottom_toTopOf="@+id/signup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -149,10 +149,10 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
                     android:hint="Password"
-                    android:textColorHint="#707070"
                     android:inputType="textPassword"
                     android:padding="13dp"
                     android:textColor="@color/black"
+                    android:textColorHint="#707070"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,6 +162,7 @@
                 android:layout_height="51dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
+                android:layout_marginBottom="32dp"
                 android:background="@drawable/button_gradient"
                 android:fontFamily="@font/adamina"
                 android:text="Sign Up"
@@ -172,6 +173,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TILpasswordsignup" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="Already Registered?"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/login2"
+                app:layout_constraintTop_toBottomOf="@+id/signup" />
+
+            <TextView
+                android:id="@+id/login2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:onClick="LoginPage"
+                android:text="Login"
+                android:textColor="#6765E8"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signup" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.mysocial.flipr.MainActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.User;
@@ -17,7 +18,7 @@ import com.mysocial.flipr.viewmodels.SignInViewModel;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText email, password;
+    TextInputEditText email, password;
     Button login;
     SignInViewModel viewModel;
 

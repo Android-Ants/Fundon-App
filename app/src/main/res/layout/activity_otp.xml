@@ -54,9 +54,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/white">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/otp"
@@ -64,7 +62,6 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
                     android:hint="Enter the OTP"
-                    android:inputType="textPassword"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"

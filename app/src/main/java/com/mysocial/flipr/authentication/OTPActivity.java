@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.mysocial.flipr.MainActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.OTPModel;
@@ -21,7 +22,7 @@ import com.mysocial.flipr.viewmodels.SignUpViewModel;
 
 public class OTPActivity extends AppCompatActivity {
 
-    private EditText otp;
+    private TextInputEditText otp;
     private Button verify_otp;
     private OTPViewModel viewModel;
     private SignUpViewModel signUpViewModel;
@@ -46,7 +47,6 @@ public class OTPActivity extends AppCompatActivity {
     }
 
     private void verify_email_address() {
-//        SharedPreferences sharedPreferences=getSharedPreferences("BankPro", Context.MODE_PRIVATE);
         OTPModel model = new OTPModel(token,otp.getText().toString());
         viewModel.verifyUser(model, OTPActivity.this);
     }
@@ -72,9 +72,5 @@ public class OTPActivity extends AppCompatActivity {
                 token=s;
             }
         });
-    }
-
-    public void LoginPage2(View view) {
-        startActivity(new Intent(OTPActivity.this, LoginActivity.class));
     }
 }

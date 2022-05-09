@@ -41,18 +41,11 @@ public class OTPRepo {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("OTP Repo", response.toString());
-//                try {
-//                    if (response.get("message").toString().equals("User Registered Signin to Continue"))
-//                        editor.putBoolean("verify_email", true);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString());
-//                editor.putBoolean("verify_email", false);
             }
         });
         requestQueue = Volley.newRequestQueue(context);

@@ -36,7 +36,7 @@ public class LoginRepo {
     public void userSignIn(User user, Context context) {
 
         Map<String, String> params = new HashMap<>();
-        params.put("email", user.getEmail());
+        params.put("userName", user.getEmail());
         params.put("password", user.getPassword());
 
         String url = "https://codeq-flipr.herokuapp.com/api/auth/signin";
@@ -47,17 +47,6 @@ public class LoginRepo {
                 Log.d("response", response.toString());
                 try {
                     token.postValue(response.get("token").toString());
-//                    Log.d("Doublee",response.getJSONObject("user").get("name").toString());
-
-                    SharedPreferences sharedPreferences= context.getSharedPreferences("BankProApp",Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor=sharedPreferences.edit();
-
-                    editor.putString("name",response.getJSONObject("user").get("name").toString());
-                    editor.putString("email",response.getJSONObject("user").get("email").toString());
-
-                    editor.commit();
-//                    user.setName(response.get("name").toString());
-//                    user.setEmail(response.get("email").toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

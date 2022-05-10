@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mysocial.flipr">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +13,23 @@
         android:theme="@style/Theme.Flipr">
         <activity
             android:name=".authentication.SignUpActivity"
+            android:exported="false" />
+        <activity android:name=".UploadDocumentsActivity" />
+        <activity
+            android:name=".dashboard.DashboardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".authentication.LoginActivity"/>
-        <activity android:name=".authentication.OTPActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".authentication.LoginActivity" />
+        <activity android:name=".authentication.OTPActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".BankDetailsActivity" />
+        <activity android:name=".ProfileActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

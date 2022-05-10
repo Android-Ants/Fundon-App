@@ -122,7 +122,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/TILemailsignup"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/black"
-                app:startIconDrawable="@drawable/key"
+                app:startIconDrawable="@drawable/ic_key"
                 app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText

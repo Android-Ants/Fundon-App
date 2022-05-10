@@ -64,7 +64,7 @@ public class DashboardActivity extends AppCompatActivity {
                     case R.id.navigation_loans:
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.nav_host_fragment_activity_bottom_navigation,
-                                        new LoanFragment(DashboardActivity.this , sharedPreferences.getString("token" , "")))
+                                        new LoanFragment(DashboardActivity.this , sharedPreferences.getString("token" , "") , detailsModel))
                                 .commit();
                         break;
 

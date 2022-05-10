@@ -1,6 +1,8 @@
 package com.mysocial.flipr.cibil;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.ceil;
+import static java.lang.Math.floor;
 
 public class Cibil {
 
@@ -111,4 +113,13 @@ public class Cibil {
         return score;
     }
 
+    // This function will return the EMI must be paid by borrower to the lender
+    // here time should be in months
+    // and rate is the annual rate
+    int getEMI(int principal,int time,double rate){
+        double amount=0;
+        amount=principal*(1+rate*time/12.0);
+        amount/=time;
+        return (int)ceil(amount);
+    }
 }

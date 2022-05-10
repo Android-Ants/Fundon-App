@@ -121,18 +121,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:text="Applicable interest rate :"
+                android:text="Applicable interest rate in % :"
                 android:textColor="#6765E8"
                 android:textSize="10sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView21"
+                app:layout_constraintEnd_toStartOf="@+id/loaninterest"
                 app:layout_constraintTop_toBottomOf="@+id/TILLoanTenure" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/loaninterest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
-                android:text="5%"
+                android:text="5"
                 android:textColor="#25292D"
                 android:textSize="10sp"
                 android:textStyle="bold"
@@ -140,7 +140,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView20" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/login_otp"
+                android:id="@+id/apply"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:layout_marginBottom="4dp"
@@ -163,6 +163,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="I agree to the Terms &amp; Conditions and Policy"
                 android:textSize="13sp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/login_otp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

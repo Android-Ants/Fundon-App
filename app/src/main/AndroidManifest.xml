@@ -32,6 +32,7 @@
         <activity android:name=".DetailsActivity"/>
         <activity android:name=".BankDetailsActivity"/>
         <activity android:name=".ProfileActivity"/>
+        <activity android:name=".LoanApplicationActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

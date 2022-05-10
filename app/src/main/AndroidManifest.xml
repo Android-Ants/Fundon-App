@@ -15,7 +15,7 @@
             android:name=".authentication.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".authentication.UploadDocumentsActivity"
+            android:name=".UploadDocumentsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

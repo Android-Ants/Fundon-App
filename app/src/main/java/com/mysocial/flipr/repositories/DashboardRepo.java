@@ -53,7 +53,6 @@ public class DashboardRepo {
                 Log.d("response", response.toString());
 
                 try {
-                    Toast.makeText(context, response.get("message").toString(), Toast.LENGTH_SHORT).show();
                     message.postValue(response.getString("message"));
 
 

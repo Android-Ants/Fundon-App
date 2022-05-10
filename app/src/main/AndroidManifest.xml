@@ -18,7 +18,7 @@
             android:name=".authentication.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoanApplicationActivity"
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +32,7 @@
         <activity android:name=".DetailsActivity"/>
         <activity android:name=".BankDetailsActivity"/>
         <activity android:name=".ProfileActivity"/>
+        <activity android:name=".LoanApplicationActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

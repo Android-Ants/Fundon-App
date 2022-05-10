@@ -28,7 +28,7 @@
         <activity android:name=".authentication.OTPActivity"/>
         <activity android:name=".UploadDocumentsActivity"/>
         <activity android:name=".DetailsActivity"/>
-        <activity android:name=".DashboardActivity"/>
+        <activity android:name=".dashboard.DashboardActivity"/>
         <activity android:name=".BankDetailsActivity"/>
         <activity android:name=".ProfileActivity"/>
 

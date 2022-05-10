@@ -167,6 +167,7 @@
                     android:fontFamily="@font/adamina"
                     android:hint="Address"
                     android:padding="13dp"
+                    android:maxLength="20"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />

@@ -42,7 +42,7 @@ public class DashboardRepo {
     public void get_profile ( String username ,  Context context , String token )
     {
         Map<String, String> params = new HashMap<>();
-        params.put("userName", "ansh");
+        params.put("userName", username);
 
         JSONObject object = new JSONObject(params) ;
 

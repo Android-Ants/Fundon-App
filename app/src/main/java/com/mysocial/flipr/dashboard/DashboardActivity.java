@@ -18,6 +18,7 @@ import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.databinding.ActivityDashboardBinding;
 import com.mysocial.flipr.models.DetailsModel;
+import com.mysocial.flipr.models.User;
 import com.mysocial.flipr.viewmodels.DashboardViewModel;
 import com.mysocial.flipr.viewmodels.SignUpViewModel;
 
@@ -43,7 +44,6 @@ public class DashboardActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
         detailsModel = new DetailsModel() ;
-
         init_view_model();
 
         getSupportFragmentManager().beginTransaction()
@@ -64,7 +64,7 @@ public class DashboardActivity extends AppCompatActivity {
                     case R.id.navigation_loans:
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.nav_host_fragment_activity_bottom_navigation,
-                                        new LoanFragment(DashboardActivity.this , sharedPreferences.getString("token" , "")))
+                                        new LoanFragment(DashboardActivity.this , sharedPreferences.getString("token" , "") , detailsModel))
                                 .commit();
                         break;
 

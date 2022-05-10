@@ -3,11 +3,15 @@ package com.mysocial.flipr.authentication;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -23,7 +27,7 @@ public class UploadDocumentsActivity extends AppCompatActivity {
 
     ActivityUploadDocumentsBinding binding;
 
-    Uri aadharFile, panFile, banKDetailsFile;
+    Uri aadharFile, panFile, banKDetailsFile, aadharFileLink, panFileLink, banKDetailsFileLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,7 @@ public class UploadDocumentsActivity extends AppCompatActivity {
             }
         });
 
-        binding.aadharImageUpload.setOnClickListener(new View.OnClickListener() {
+        binding.panImageUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent galleryIntent = new Intent();
@@ -55,7 +59,7 @@ public class UploadDocumentsActivity extends AppCompatActivity {
             }
         });
 
-        binding.aadharImageUpload.setOnClickListener(new View.OnClickListener() {
+        binding.bankDetailImageUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent galleryIntent = new Intent();
@@ -84,22 +88,25 @@ public class UploadDocumentsActivity extends AppCompatActivity {
             dialog = new ProgressDialog(this);
             dialog.setMessage("Uploading");
 
+            Uri imageuri = data.getData();
+            String fileUri = imageuri.toString();
+            Toast.makeText(this, ""+fileUri, Toast.LENGTH_SHORT).show();
+
             switch (requestCode){
                 case 1:
-                    aadharFile = data.getData();
+                    aadharFile = imageuri;
                     break;
                 case 2:
-                    panFile = data.getData();
+                    panFile = imageuri;
                     break;
                 case 3:
-                    banKDetailsFile = data.getData();
+                    banKDetailsFile = imageuri;
                     break;
             }
 
             // this will show message uploading
             // while pdf is uploading
             dialog.show();
-            Uri imageuri = data.getData();
             final String timestamp = "" + System.currentTimeMillis();
             StorageReference storageReference = FirebaseStorage.getInstance().getReference();
             final String messagePushID = timestamp;
@@ -115,10 +122,26 @@ public class UploadDocumentsActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Uri> task) {
                     if (task.isSuccessful()) {
-                        // After uploading is done it progress
-                        // dialog box will be dismissed
+                        Drawable img = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_check ,null);
+
                         dialog.dismiss();
                         Uri uri = task.getResult();
+                        switch (requestCode){
+                            case 1:
+                                aadharFileLink = task.getResult();
+                                binding.aadharImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
+                                break;
+                            case 2:
+                                panFileLink = task.getResult();
+                                binding.panImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
+
+                                break;
+                            case 3:
+                                banKDetailsFileLink = task.getResult();
+                                binding.bankDetailImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
+
+                                break;
+                        }
                         String myurl;
                         myurl = uri.toString();
                         Toast.makeText(UploadDocumentsActivity.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();

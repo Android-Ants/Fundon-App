@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flipr">
         <activity
-            android:name=".authentication.UploadDocumentsActivity"
+            android:name=".authentication.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".authentication.SignUpActivity"
+            android:name=".authentication.UploadDocumentsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

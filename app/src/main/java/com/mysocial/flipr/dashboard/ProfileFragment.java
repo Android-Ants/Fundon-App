@@ -19,8 +19,7 @@ import com.mysocial.flipr.models.User;
 
 public class ProfileFragment extends Fragment {
 
-    DetailsModel detailsModel=new DetailsModel();
-    User user= new User();
+    DetailsModel detailsModel;
     public ProfileFragment(DetailsModel detailsModel) {
       this.detailsModel=detailsModel;
         // Required empty public constructor
@@ -55,8 +54,8 @@ public class ProfileFragment extends Fragment {
             TextView adress=view.findViewById(R.id.disp_address);
 
             name.setText(detailsModel.getName());
-            username.setText(user.getUserName());
-            email.setText(user.getEmail());
+            username.setText(detailsModel.getUserName());
+            email.setText(detailsModel.getEmail());
             mobile.setText(detailsModel.getMobile());
             occupation.setText(detailsModel.getOccupation());
             accno.setText(detailsModel.getBankAccountNo());

@@ -63,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/background"
-                    android:hint="Enter the Email"
+                    android:hint="Enter the UserName"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
@@ -88,7 +88,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/TILemailsignin"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/white"
-                app:startIconDrawable="@drawable/key"
+                app:startIconDrawable="@drawable/ic_key"
                 app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText

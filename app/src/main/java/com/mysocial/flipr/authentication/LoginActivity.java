@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,11 +22,17 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText userName, password;
     Button login;
     SignInViewModel viewModel;
+    private SharedPreferences sharedPreferences ;
+    private SharedPreferences.Editor editor ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+
+        sharedPreferences = getSharedPreferences("Fundon",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
         userName = findViewById(R.id.emailsignin);
         password = findViewById(R.id.passwordsignin);
         login = findViewById(R.id.login);
@@ -50,9 +57,13 @@ public class LoginActivity extends AppCompatActivity {
         viewModel.getTokenObserver().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
+                editor.putString("token" , s);
+                editor.putString("userName" , userName.getText().toString());
+                editor.commit();
                 Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                 intent.putExtra("token", s);
                 startActivity(intent);
+                finish();
             }
         });
     }

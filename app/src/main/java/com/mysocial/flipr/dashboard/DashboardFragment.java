@@ -71,14 +71,14 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        get_applied_loans();
-        get_accepted_loans();
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         adapter = new LoanAdapter(context , loans , "dashboard");
         recyclerView.setAdapter(adapter);
 
+        get_applied_loans();
+        get_accepted_loans();
 
         return view ;
     }

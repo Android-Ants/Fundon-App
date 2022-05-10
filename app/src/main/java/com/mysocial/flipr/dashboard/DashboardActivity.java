@@ -44,7 +44,8 @@ public class DashboardActivity extends AppCompatActivity {
         init_view_model();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment(detailsModel, DashboardActivity.this , sharedPreferences.getString("token", "")))
+                .replace(R.id.nav_host_fragment_activity_bottom_navigation,
+                        new LoanFragment(DashboardActivity.this, sharedPreferences.getString("token", ""), detailsModel))
                 .commit();
 
         binding.navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

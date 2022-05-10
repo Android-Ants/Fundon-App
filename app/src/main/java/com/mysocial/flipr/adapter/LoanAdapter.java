@@ -66,6 +66,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         if ( loans.get(position).getStatus().equalsIgnoreCase("accepted") )
         {
             holder.textView.setText("On Going");
+            holder.accept.setVisibility(View.GONE);
         }else
         {
             holder.textView.setText("applied");

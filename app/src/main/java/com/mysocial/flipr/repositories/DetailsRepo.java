@@ -14,7 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.mysocial.flipr.models.DetailsModel;
 import com.mysocial.flipr.models.User;
+import com.mysocial.flipr.viewmodels.DetailsViewModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,25 +24,36 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignUpRepo {
-    private static final SignUpRepo instance = new SignUpRepo();
+public class DetailsRepo {
+    private static final DetailsRepo instance = new DetailsRepo();
     private final MutableLiveData<String> message = new MutableLiveData<>();
-    private final MutableLiveData<String> token = new MutableLiveData<>();
     RequestQueue requestQueue;
-    Boolean isRegister = false;
 
-
-    public static SignUpRepo getInstance() {
+    public static DetailsRepo getInstance() {
         return instance;
     }
 
-    public void usercreate(User user, Context context) {
-        Map<String, String> params = new HashMap<>();
-        params.put("userName", user.getUserName());
-        params.put("email", user.getEmail());
-        params.put("password", user.getPassword());
+    public void detailscreate(DetailsModel model, Context context) {
 
-        String url = "https://codeq-flipr.herokuapp.com/api/auth/signup";
+        Map<String, String> params = new HashMap<>();
+        params.put("email", model.getEmail());
+        params.put("userName", model.getUserName());
+        params.put("name", model.getName());
+        params.put("mobile", model.getMobile());
+        params.put("address", model.getAddress());
+        params.put("occupation", model.getOccupation());
+        params.put("aadhaarNo", model.getAadhaarNo());
+        params.put("panNo", model.getPanNo());
+        params.put("bankAccountNo", model.getBankAccountNo());
+        params.put("ifscCode", model.getIfscCode());
+        params.put("imgUrl", model.getImgUrl());
+        params.put("aadhaarUrl", model.getAadhaarUrl());
+        params.put("panUrl", model.getPanUrl());
+        params.put("bankUrl", model.getBankUrl());
+        params.put("isVerified", String.valueOf(model.isVerified()));
+        Log.d("params", String.valueOf(params));
+
+        String url = "https://codeq-flipr.herokuapp.com/api/profile/create";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
                 new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
             @Override
@@ -50,7 +63,6 @@ public class SignUpRepo {
                 try {
                     Toast.makeText(context, response.get("message").toString(), Toast.LENGTH_SHORT).show();
                     message.postValue(response.get("message").toString());
-                    token.postValue(response.get("token").toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -61,7 +73,17 @@ public class SignUpRepo {
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString());
             }
-        }) ;
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                SharedPreferences sharedPreferences= context.getSharedPreferences("All Details",Context.MODE_PRIVATE);
+                String tomken=sharedPreferences.getString("token","");
+//                Log.d("token",tomken);
+                Map<String, String> map = new HashMap<>();
+                map.put("Authorization", "Bearer "+tomken);
+                return map;
+            }
+        };
         requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(jsonObjectRequest);
     }
@@ -70,7 +92,5 @@ public class SignUpRepo {
         return message;
     }
 
-    public MutableLiveData<String> getToken() {
-        return token;
-    }
+
 }

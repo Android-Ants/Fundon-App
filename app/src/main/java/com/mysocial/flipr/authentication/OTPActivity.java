@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.mysocial.flipr.DetailsActivity;
 import com.mysocial.flipr.MainActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.OTPModel;
@@ -41,7 +42,7 @@ public class OTPActivity extends AppCompatActivity {
             public void onClick(View view) {
                 verify_email_address();
 
-                startActivity(new Intent(OTPActivity.this, MainActivity.class));
+                startActivity(new Intent(OTPActivity.this, LoginActivity.class));
             }
         });
     }

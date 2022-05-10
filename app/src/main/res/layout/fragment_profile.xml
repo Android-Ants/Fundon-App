@@ -181,7 +181,7 @@
 
                 <TextView
                     android:id="@+id/disp_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Name"
@@ -195,7 +195,7 @@
 
                 <TextView
                     android:id="@+id/disp_username"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Username"
@@ -209,7 +209,7 @@
 
                 <TextView
                     android:id="@+id/disp_email"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Email"
@@ -223,7 +223,7 @@
 
                 <TextView
                     android:id="@+id/disp_mobile"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Mobile"
@@ -237,7 +237,7 @@
 
                 <TextView
                     android:id="@+id/disp_occupation"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Occupation"
@@ -251,7 +251,7 @@
 
                 <TextView
                     android:id="@+id/disp_address"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Address"
@@ -264,7 +264,7 @@
 
                 <TextView
                     android:id="@+id/disp_pan"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="PAN no,"
@@ -277,7 +277,7 @@
 
                 <TextView
                     android:id="@+id/disp_aadhar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Aadhar"
@@ -290,7 +290,7 @@
 
                 <TextView
                     android:id="@+id/disp_ifsc"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="IFSC Code"
@@ -316,7 +316,7 @@
 
                 <TextView
                     android:id="@+id/disp_bankacc"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="8dp"
                     android:text="Bank Account"
@@ -334,7 +334,7 @@
                     android:layout_height="51dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="80dp"
                     android:background="@drawable/button_gradient"
                     android:elevation="10dp"
                     android:fontFamily="@font/montserrat_alternates"

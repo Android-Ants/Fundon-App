@@ -64,6 +64,7 @@
                     android:fontFamily="@font/adamina"
                     android:hint="Enter the OTP"
                     android:padding="13dp"
+                    android:inputType="number"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />
@@ -74,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Confermation"
+                android:text="Confirmation"
                 android:textColor="@color/primary"
                 android:textSize="18sp"
                 android:textStyle="bold"

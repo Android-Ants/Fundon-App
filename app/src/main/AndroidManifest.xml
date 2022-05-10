@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flipr">
         <activity
-            android:name=".authentication.SignUpActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +20,11 @@
         </activity>
         <activity android:name=".authentication.LoginActivity"/>
         <activity android:name=".authentication.OTPActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".authentication.SignUpActivity"/>
         <activity android:name=".DetailsActivity"/>
         <activity android:name=".BankDetailsActivity"/>
         <activity android:name=".ProfileActivity"/>
+        <activity android:name=".DashboardActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

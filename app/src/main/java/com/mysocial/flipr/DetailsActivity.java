@@ -90,9 +90,6 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addDetails(params);
-                Intent intent = new Intent(DetailsActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
 
@@ -193,7 +190,12 @@ public class DetailsActivity extends AppCompatActivity {
         viewModel.getMessageUserObserver().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-
+                if ( s.equalsIgnoreCase("Profile saved Successfully") )
+                {
+                    Intent intent = new Intent(DetailsActivity.this , DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }

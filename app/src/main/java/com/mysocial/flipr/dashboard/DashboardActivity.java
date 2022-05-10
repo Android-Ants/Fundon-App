@@ -18,6 +18,7 @@ import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.databinding.ActivityDashboardBinding;
 import com.mysocial.flipr.models.DetailsModel;
+import com.mysocial.flipr.models.User;
 import com.mysocial.flipr.viewmodels.DashboardViewModel;
 import com.mysocial.flipr.viewmodels.SignUpViewModel;
 
@@ -43,7 +44,6 @@ public class DashboardActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
         detailsModel = new DetailsModel() ;
-
         init_view_model();
 
         getSupportFragmentManager().beginTransaction()

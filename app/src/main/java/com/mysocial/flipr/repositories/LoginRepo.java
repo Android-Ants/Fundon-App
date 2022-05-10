@@ -36,7 +36,7 @@ public class LoginRepo {
     public void userSignIn(User user, Context context) {
 
         Map<String, String> params = new HashMap<>();
-        params.put("userName", user.getEmail());
+        params.put("userName", user.getUserName());
         params.put("password", user.getPassword());
 
         String url = "https://codeq-flipr.herokuapp.com/api/auth/signin";
@@ -47,6 +47,17 @@ public class LoginRepo {
                 Log.d("response", response.toString());
                 try {
                     token.postValue(response.get("token").toString());
+//                    Log.d("token",response.get("token").toString());
+
+                    SharedPreferences sharedPreferences= context.getSharedPreferences("All Details",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("token",response.get("token").toString());
+                    JSONObject details=(JSONObject) response.get("user");
+                    editor.putString("userName",details.get("userName").toString());
+                    editor.putString("email",details.get("email").toString());
+
+                    editor.commit();
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

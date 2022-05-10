@@ -134,6 +134,8 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
                     android:hint="PAN Number"
+                    android:inputType="textCapCharacters"
+
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
@@ -194,6 +196,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
                     android:hint="IFSC Code"
+                    android:inputType="textCapCharacters"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"

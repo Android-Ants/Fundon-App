@@ -76,6 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void LoginPage(View view) {
         startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+        finish();
     }
 
     private void register() {

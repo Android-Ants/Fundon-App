@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dashboard.LoanFragment">
 
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Loan Fragment" />
+        android:background="@color/background">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/gorditas"
+            android:text="Fundon"
+            android:textColor="@color/primary"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Loan Requests"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26"
+            tools:listitem="@layout/loan_item" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

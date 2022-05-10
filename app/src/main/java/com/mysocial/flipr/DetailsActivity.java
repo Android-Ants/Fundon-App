@@ -23,8 +23,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.mysocial.flipr.dashboard.DashboardActivity;
 import com.mysocial.flipr.databinding.ActivityDocumentsBinding;
-import com.mysocial.flipr.databinding.ActivityUploadDocumentsBinding;
 import com.mysocial.flipr.models.DetailsModel;
 import com.mysocial.flipr.viewmodels.DetailsViewModel;
 
@@ -90,7 +90,7 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addDetails(params);
-                Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
+                Intent intent = new Intent(DetailsActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 finish();
             }

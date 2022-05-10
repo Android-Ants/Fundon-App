@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".authentication.LoginActivity">
 
     <TextView
@@ -42,11 +43,15 @@
                 android:id="@+id/TILemailsignin"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
-                android:background="@color/background"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                android:background="@color/white"
                 android:padding="8dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
@@ -74,11 +79,15 @@
                 android:id="@+id/TILpasswordsignin"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="36dp"
                 android:layout_marginEnd="24dp"
                 android:background="#F9FAFC"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
                 android:padding="8dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
@@ -87,7 +96,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TILemailsignin"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/white"
+                app:passwordToggleTint="@color/black"
                 app:startIconDrawable="@drawable/ic_key"
                 app:startIconTint="#AFAFFA">
 
@@ -108,8 +117,6 @@
                 android:id="@+id/login"
                 android:layout_width="300dp"
                 android:layout_height="51dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/button_gradient"
                 android:text="Sign In"
@@ -119,7 +126,6 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TILpasswordsignin" />
 

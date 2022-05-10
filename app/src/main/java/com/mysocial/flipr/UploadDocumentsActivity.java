@@ -1,4 +1,4 @@
-package com.mysocial.flipr.authentication;
+package com.mysocial.flipr;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,11 +7,9 @@ import androidx.core.content.res.ResourcesCompat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.mysocial.flipr.R;
 import com.mysocial.flipr.databinding.ActivityUploadDocumentsBinding;
 
 import java.io.File;
@@ -77,7 +74,7 @@ public class UploadDocumentsActivity extends AppCompatActivity {
         binding.uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
 

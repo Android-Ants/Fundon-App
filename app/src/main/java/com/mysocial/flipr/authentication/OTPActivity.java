@@ -43,7 +43,11 @@ public class OTPActivity extends AppCompatActivity {
         verify_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 verify_email_address();
+                Intent intent=new Intent(OTPActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -58,7 +62,6 @@ public class OTPActivity extends AppCompatActivity {
         viewModel.getMessageObserver().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-
             }
         });
         viewModel.getUserObserver().observe(this, new Observer<String>() {

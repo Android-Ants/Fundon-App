@@ -24,6 +24,6 @@ public class DetailsViewModel extends ViewModel {
         return message;
     }
     public void createdetails(DetailsModel model, Context context){
-        Log.d("paramsDetailsViewModel",model.toString());
+//        Log.d("paramsDetailsViewModel",model.toString());
         repo.detailscreate(model,context);}
 }

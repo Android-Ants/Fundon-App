@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "642197131521",
+    "project_id": "fundon-2da20",
+    "storage_bucket": "fundon-2da20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642197131521:android:8479c5db60ff6a6e404b00",
+        "android_client_info": {
+          "package_name": "com.mysocial.flipr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642197131521-lfguvs1majbfqqs5n7c8iavp3lqog36v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJO2MxcPILMofcMks82gtkPFSxlwQug2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642197131521-lfguvs1majbfqqs5n7c8iavp3lqog36v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

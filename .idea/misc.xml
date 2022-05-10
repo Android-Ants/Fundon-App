@@ -3,11 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/font/montserrat.xml" value="0.284375" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/font/montserrat_alternates.xml" value="0.284375" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/activity_otp.xml" value="0.25416666666666665" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/activity_personal_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/activity_signin.xml" value="0.25416666666666665" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/activity_upload_documents.xml" value="0.25" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+
         <entry key="..\:/CodeQ/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/CodeQ/app/src/main/res/layout/activity_otp.xml" value="0.17552083333333332" />
         <entry key="..\:/CodeQ/app/src/main/res/layout/activity_personal_details.xml" value="0.17552083333333332" />
         <entry key="..\:/CodeQ/app/src/main/res/layout/activity_signin.xml" value="0.17552083333333332" />
         <entry key="..\:/CodeQ/app/src/main/res/layout/activity_signup.xml" value="0.17552083333333332" />
+
         <entry key="..\:/Users/Ansh/Flipr/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/drawable/button_gradient.xml" value="0.1" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/drawable/small_button.xml" value="0.1045" />
@@ -18,7 +30,7 @@
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_otp.xml" value="0.19375" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_personal_details.xml" value="0.22" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_signin.xml" value="0.19375" />
-        <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_signup.xml" value="0.2" />
+        <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_signup.xml" value="0.22" />
       </map>
     </option>
   </component>

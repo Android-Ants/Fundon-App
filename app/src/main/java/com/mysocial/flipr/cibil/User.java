@@ -2,20 +2,27 @@ package com.mysocial.flipr.cibil;
 
 public class User {
 
-    private int loanCount;
-    private int currentLoanCount;
-    private int finishedOverDue;
-    private int currOverdue;
-    private int unsecredLoanCount;
-    private int securedLoanCount;
-    private int loanCountYear;
-    private int paymentExccedingDeadline;
-    private int disapprovedCount;
-    private int libility;
-    private int presentLoanAmount;
-    private int amountPaid;
-    private int maxCredit;
-    private int CIBIL;
+    private int loanCount=0;
+    private int currentLoanCount=0;
+    private int finishedOverDue=0;
+    private int currOverdue=0;
+    private int unsecredLoanCount=0;
+    private int securedLoanCount=0;
+    private int loanCountYear=0;
+    private int disapprovedCount=0;
+    private int totalLoanCredited=0;
+    private int presentLoanAmount=0;
+    private int amountPaid=0;
+    private int maxCredit=1000;
+    private int CIBIL=-1;
+
+    public int getTotalLoanCredited() {
+        return totalLoanCredited;
+    }
+
+    public void setTotalLoanCredited(int totalLoanCredited) {
+        this.totalLoanCredited = totalLoanCredited;
+    }
 
     public int getLoanCount() {
         return loanCount;
@@ -73,28 +80,12 @@ public class User {
         this.loanCountYear = loanCountYear;
     }
 
-    public int getPaymentExccedingDeadline() {
-        return paymentExccedingDeadline;
-    }
-
-    public void setPaymentExccedingDeadline(int paymentExccedingDeadline) {
-        this.paymentExccedingDeadline = paymentExccedingDeadline;
-    }
-
     public int getDisapprovedCount() {
         return disapprovedCount;
     }
 
     public void setDisapprovedCount(int disapprovedCount) {
         this.disapprovedCount = disapprovedCount;
-    }
-
-    public int getLibility() {
-        return libility;
-    }
-
-    public void setLibility(int libility) {
-        this.libility = libility;
     }
 
     public int getPresentLoanAmount() {

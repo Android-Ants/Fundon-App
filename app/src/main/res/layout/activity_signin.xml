@@ -4,82 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5"
     tools:context=".authentication.LoginActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/gorditas"
         android:text="FUNDON"
         android:textColor="#6765E8"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="450dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#FFFFFF"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/aldrich"
-                android:text="Sign In"
-                android:textColor="#6765E8"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/TILemailsignin"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TILemailsignin"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginStart="8dp"
-                android:background="#F9FAFC"
-                android:elevation="7dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/background"
+                android:padding="8dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
                 app:layout_constraintBottom_toTopOf="@+id/TILpasswordsignin"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/TILpasswordsignin"
-                app:layout_constraintTop_toBottomOf="@+id/textView2">
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/username_vector"
+                app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailsignin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/adamina"
+                    android:background="@color/background"
                     android:hint="Enter the Email"
                     android:padding="13dp"
                     android:textColor="@color/black"
@@ -92,23 +75,28 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="24dp"
                 android:background="#F9FAFC"
-                android:elevation="7dp"
+                android:padding="8dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
-                app:layout_constraintBottom_toTopOf="@+id/login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TILemailsignin"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/white"
-                tools:layout_editor_absoluteX="8dp">
+                app:startIconDrawable="@drawable/key"
+                app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordsignin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/adamina"
-                    android:hint="Enter the Password"
+                    android:background="@color/background"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="13dp"
                     android:textColor="@color/black"
@@ -124,10 +112,11 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/button_gradient"
-                android:fontFamily="@font/adamina"
                 android:text="Sign In"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -164,6 +153,30 @@
                 app:layout_constraintTop_toBottomOf="@+id/login" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="A place to lend or borrow money safely an securely."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -61,6 +62,24 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
                 onClick.accept_loan(holder.getAdapterPosition());
             }
         });
+
+        if ( loans.get(position).getStatus().equalsIgnoreCase("accepted") )
+        {
+            holder.textView.setText("On Going");
+        }else
+        {
+            holder.textView.setText("applied");
+        }
+
+        if ( string.equalsIgnoreCase("dashboard") )
+        {
+            holder.linearLayout.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            holder.linearLayout.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
@@ -70,8 +89,9 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
 
     public class LoanViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView loanId , loanAmount ,loanDetail , borrowerUserName , borrowerEmail ;
+        private TextView loanId , loanAmount ,loanDetail , borrowerUserName , borrowerEmail  , textView;
         private Button accept ;
+        private LinearLayout linearLayout ;
 
         public LoanViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +101,8 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
             borrowerUserName = itemView.findViewById(R.id.requestUsername);
             borrowerEmail = itemView.findViewById(R.id.requestEmail);
             accept = itemView.findViewById(R.id.requestAccept);
+            linearLayout = itemView.findViewById(R.id.linearLayout);
+            textView = itemView.findViewById(R.id.textView);
         }
     }
 

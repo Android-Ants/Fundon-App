@@ -1,6 +1,7 @@
 package com.mysocial.flipr.authentication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -38,7 +39,6 @@ public class SignUpActivity extends AppCompatActivity {
         TILname = findViewById(R.id.TILnamesignup);
         TILemail = findViewById(R.id.TILemailsignup);
         TILpassword = findViewById(R.id.TILpasswordsignup);
-
 
         initViewModel();
 

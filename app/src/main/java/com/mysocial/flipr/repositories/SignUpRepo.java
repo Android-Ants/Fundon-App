@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -26,7 +27,7 @@ public class SignUpRepo {
     private final MutableLiveData<String> message = new MutableLiveData<>();
     private final MutableLiveData<String> token = new MutableLiveData<>();
     RequestQueue requestQueue;
-    Boolean isRegister=false;
+    Boolean isRegister = false;
 
 
     public static SignUpRepo getInstance() {
@@ -35,7 +36,7 @@ public class SignUpRepo {
 
     public void usercreate(User user, Context context) {
         Map<String, String> params = new HashMap<>();
-        params.put("userName", user.getName());
+        params.put("userName", user.getUserName());
         params.put("email", user.getEmail());
         params.put("password", user.getPassword());
 
@@ -59,7 +60,7 @@ public class SignUpRepo {
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString());
             }
-        });
+        }) ;
         requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(jsonObjectRequest);
     }

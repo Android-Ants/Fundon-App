@@ -14,13 +14,16 @@ import android.widget.TextView;
 import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.DetailsModel;
+
 import com.mysocial.flipr.models.User;
 
 public class ProfileFragment extends Fragment {
 
-    public ProfileFragment() {
+    DetailsModel detailsModel=new DetailsModel();
+    User user= new User();
+    public ProfileFragment(DetailsModel detailsModel) {
+      this.detailsModel=detailsModel;
         // Required empty public constructor
-
     }
 
     @Override
@@ -40,8 +43,6 @@ public class ProfileFragment extends Fragment {
         View view=getView();
         if(view!=null)
         {
-            DetailsModel detailsModel=new DetailsModel();
-            User user= new User();
             TextView name=view.findViewById(R.id.disp_name);
             TextView username=view.findViewById(R.id.disp_username);
             TextView email=view.findViewById(R.id.disp_email);

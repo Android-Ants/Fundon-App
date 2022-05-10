@@ -1,7 +1,9 @@
 package com.mysocial.flipr.dashboard;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -139,7 +141,53 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
     public void accept_loan(int a) {
 
         Loan loan = loans.get(a);
+        show_alert(loan);
+    }
 
+    private void show_alert( Loan loan )
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle("Confirmation Message");
+        alert.setMessage("Are you sure you want to accept this loan ?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                set_secured(loan);
+            }
+        });
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alert.show();
+    }
+
+    private void set_secured( Loan loan )
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle("Security");
+        alert.setMessage("Is collateral provided to you ?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                secured = true ;
+                call_api(loan);
+            }
+        });
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                secured = false ;
+                call_api(loan);
+            }
+        });
+        alert.show() ;
+    }
+
+    private void call_api ( Loan loan )
+    {
         Map<String, String> params = new HashMap<>();
         params.put("id",loan.getId() );
         params.put("borrowerUserName", loan.getBorrowerUserName() );
@@ -188,4 +236,5 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
         requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(jsonObjectRequest);
     }
+
 }

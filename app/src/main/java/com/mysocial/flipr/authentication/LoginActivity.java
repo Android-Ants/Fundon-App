@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.mysocial.flipr.DetailsActivity;
 import com.mysocial.flipr.MainActivity;
+import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.User;
 import com.mysocial.flipr.viewmodels.SignInViewModel;
@@ -50,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         viewModel.getTokenObserver().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
                 intent.putExtra("token", s);
                 startActivity(intent);
             }

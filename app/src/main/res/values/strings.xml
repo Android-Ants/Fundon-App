@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flipr</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_loan_timeline">Loans</string>
+    <string name="title_profile">Profile</string>
 </resources>

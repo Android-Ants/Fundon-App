@@ -42,6 +42,7 @@ dependencies {
     //google dependency
     implementation 'com.google.android.gms:play-services-base:18.0.1'
     implementation 'com.google.firebase:firebase-storage:20.0.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
 
 
     //Lifecycle

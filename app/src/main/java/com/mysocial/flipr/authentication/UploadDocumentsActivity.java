@@ -23,11 +23,14 @@ import com.google.firebase.storage.StorageReference;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.databinding.ActivityUploadDocumentsBinding;
 
+import java.io.File;
+
 public class UploadDocumentsActivity extends AppCompatActivity {
 
     ActivityUploadDocumentsBinding binding;
 
-    Uri aadharFile, panFile, banKDetailsFile, aadharFileLink, panFileLink, banKDetailsFileLink;
+    Uri aadharFile, panFile, banKDetailsFile;
+    String aadharFileLink, panFileLink, banKDetailsFileLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,12 @@ public class UploadDocumentsActivity extends AppCompatActivity {
             }
         });
 
+        binding.uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
 
 
     }
@@ -89,18 +98,21 @@ public class UploadDocumentsActivity extends AppCompatActivity {
             dialog.setMessage("Uploading");
 
             Uri imageuri = data.getData();
-            String fileUri = imageuri.toString();
-            Toast.makeText(this, ""+fileUri, Toast.LENGTH_SHORT).show();
+            File file = new File(imageuri.getPath());
+            String fileName = file.getName();
 
             switch (requestCode){
                 case 1:
                     aadharFile = imageuri;
+                    binding.aadharImageUploadText.setText(fileName+".pdf");
                     break;
                 case 2:
                     panFile = imageuri;
+                    binding.panImageUploadText.setText(fileName+".pdf");
                     break;
                 case 3:
                     banKDetailsFile = imageuri;
+                    binding.bankDetailImageUploadText.setText(fileName+".pdf");
                     break;
             }
 
@@ -128,22 +140,20 @@ public class UploadDocumentsActivity extends AppCompatActivity {
                         Uri uri = task.getResult();
                         switch (requestCode){
                             case 1:
-                                aadharFileLink = task.getResult();
+                                aadharFileLink = task.getResult().toString();
                                 binding.aadharImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
                                 break;
                             case 2:
-                                panFileLink = task.getResult();
+                                panFileLink = task.getResult().toString();
                                 binding.panImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
 
                                 break;
                             case 3:
-                                banKDetailsFileLink = task.getResult();
+                                banKDetailsFileLink = task.getResult().toString();
                                 binding.bankDetailImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
 
                                 break;
                         }
-                        String myurl;
-                        myurl = uri.toString();
                         Toast.makeText(UploadDocumentsActivity.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();
                     } else {
                         dialog.dismiss();
@@ -151,6 +161,7 @@ public class UploadDocumentsActivity extends AppCompatActivity {
                     }
                 }
             });
+
         }
     }
 

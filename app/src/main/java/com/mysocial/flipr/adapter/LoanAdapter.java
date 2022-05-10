@@ -21,12 +21,21 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
     private List<Loan> loans = new ArrayList<>();
     private Context context ;
     private On_Click onClick ;
+    private String string ;
 
-    public LoanAdapter ( Context context , List<Loan> loans , On_Click onClick )
+    public LoanAdapter ( Context context , List<Loan> loans , On_Click onClick  , String string )
     {
         this.context = context ;
         this.loans = loans ;
         this.onClick = onClick ;
+        this.string = string ;
+    }
+
+    public LoanAdapter ( Context context , List<Loan> loans , String string  )
+    {
+        this.context = context ;
+        this.loans = loans ;
+        this.string = string ;
     }
 
     @NonNull

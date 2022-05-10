@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,6 +58,7 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
     private final String TAG = "LoanFragment";
     private List<Loan> loans = new ArrayList<>();
     private Boolean secured = true ;
+    private LoanAdapter adapter ;
 
 
     public LoanFragment ()
@@ -80,6 +83,12 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_loan, container, false);
         get_all_loans();
+
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        adapter = new LoanAdapter(context , loans , this::accept_loan , "loan");
+        recyclerView.setAdapter(adapter);
+
 
         return view ;
     }
@@ -112,6 +121,7 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
                         loan.setInterestRate(object2.getDouble("interestRate"));
                         loan.setSecured(object2.getBoolean("secured"));
                         loans.add(loan);
+                        adapter.notifyDataSetChanged();
                     }
 
                 } catch (JSONException e) {

@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -18,18 +17,16 @@ import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.databinding.ActivityDashboardBinding;
 import com.mysocial.flipr.models.DetailsModel;
-import com.mysocial.flipr.models.User;
 import com.mysocial.flipr.viewmodels.DashboardViewModel;
-import com.mysocial.flipr.viewmodels.SignUpViewModel;
 
 public class DashboardActivity extends AppCompatActivity {
 
     private ActivityDashboardBinding binding;
-    private ProgressDialog progressDialog ;
-    private DashboardViewModel dashboardViewModel ;
-    private SharedPreferences sharedPreferences ;
-    private SharedPreferences.Editor editor ;
-    private DetailsModel detailsModel ;
+    private ProgressDialog progressDialog;
+    private DashboardViewModel dashboardViewModel;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private DetailsModel detailsModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +37,14 @@ public class DashboardActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Fetching Your Profile . Please Wait ...");
 
-        sharedPreferences = getSharedPreferences("Fundon",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Fundon", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        detailsModel = new DetailsModel() ;
+        detailsModel = new DetailsModel();
         init_view_model();
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment())
+                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment(detailsModel, DashboardActivity.this , sharedPreferences.getString("token", "")))
                 .commit();
 
         binding.navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -57,14 +54,14 @@ public class DashboardActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.navigation_dashboard:
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment())
+                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment( detailsModel , DashboardActivity.this  , sharedPreferences.getString("token", "") ))
                                 .commit();
                         break;
 
                     case R.id.navigation_loans:
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.nav_host_fragment_activity_bottom_navigation,
-                                        new LoanFragment(DashboardActivity.this , sharedPreferences.getString("token" , "") , detailsModel))
+                                        new LoanFragment(DashboardActivity.this, sharedPreferences.getString("token", ""), detailsModel))
                                 .commit();
                         break;
 
@@ -87,20 +84,17 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onChanged(String s) {
                 progressDialog.dismiss();
-                if ( s.equalsIgnoreCase("Profile Found") )
-                {
+                if (s.equalsIgnoreCase("Profile Found")) {
                     Toast.makeText(DashboardActivity.this, "Profile Fetching Completed", Toast.LENGTH_SHORT).show();
                     dashboardViewModel.getProfileObserver().observe(DashboardActivity.this, new Observer<DetailsModel>() {
                         @Override
                         public void onChanged(DetailsModel detailModel) {
-                            detailsModel = detailModel ;
+                            detailsModel = detailModel;
                         }
                     });
-                }
-                else
-                {
+                } else {
                     Toast.makeText(DashboardActivity.this, "First Complete Profile", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DashboardActivity.this , ProfileActivity.class);
+                    Intent intent = new Intent(DashboardActivity.this, ProfileActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -109,11 +103,10 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
-    private void get_profile ()
-    {
+    private void get_profile() {
         progressDialog.show();
-        dashboardViewModel.createNewUser(sharedPreferences.getString("userName" , "") , DashboardActivity.this
-        , sharedPreferences.getString("token" , ""));
+        dashboardViewModel.createNewUser(sharedPreferences.getString("userName", ""), DashboardActivity.this
+                , sharedPreferences.getString("token", ""));
     }
 
 }

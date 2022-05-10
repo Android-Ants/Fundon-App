@@ -9,11 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mysocial.flipr.R;
+import com.mysocial.flipr.models.DetailsModel;
 
 public class ProfileFragment extends Fragment {
 
 
-    public ProfileFragment() {
+    public ProfileFragment(DetailsModel detailsModel) {
         // Required empty public constructor
     }
 

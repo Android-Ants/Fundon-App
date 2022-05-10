@@ -39,16 +39,25 @@ public class LoanApplicationRepo {
         params.put("borrowerEmail", model.getBorrowerEmail());
         params.put("lenderUserName", model.getLenderUserName());
         params.put("lenderEmail", model.getLenderEmail());
-        params.put("loanAmount", model.getLoanAmount());
-        params.put("loanTenure", model.getLoanTenure());
-        params.put("interestRate", model.getInterestRate());
         params.put("status", model.getStatus());
-        params.put("secured", model.getSecured());
         params.put("date", model.getDate());
+
+
+        JSONObject object = new JSONObject(params);
+        try {
+            object.put("loanAmount", model.getLoanAmount());
+            object.put("loanTenure", model.getLoanTenure());
+            object.put("interestRate", model.getInterestRate());
+            object.put("secured", model.getSecured());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        Log.d("hhhhhhhhh" , object.toString());
 
         String url = "https://codeq-flipr.herokuapp.com/api/loan/create";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
-                new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
+                object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("response", response.toString());
@@ -71,9 +80,9 @@ public class LoanApplicationRepo {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 SharedPreferences sharedPreferences = context.getSharedPreferences("All Details", Context.MODE_PRIVATE);
                 String tomken = sharedPreferences.getString("token", "");
-//                Log.d("token",tomken);
                 Map<String, String> map = new HashMap<>();
                 map.put("Authorization", "Bearer " + tomken);
+                params.put("Content-Type", "application/json; charset=utf-8");
                 return map;
             }
         };

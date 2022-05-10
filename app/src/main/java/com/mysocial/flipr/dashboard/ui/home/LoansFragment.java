@@ -24,7 +24,7 @@ private FragmentLoansBinding binding;
     binding = FragmentLoansBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textLoans;
         loansViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

@@ -69,6 +69,7 @@
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_bankdetails.xml" value="0.25" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_dashboard.xml" value="0.18" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_documents.xml" value="0.19375" />
+        <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_loan_application.xml" value="0.2" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_otp.xml" value="0.19375" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_personal_details.xml" value="0.22" />
@@ -86,7 +87,7 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16_PREVIEW" project-jdk-name="JDK" project-jdk-type="JavaSDK">
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_upload_documents.xml" value="0.1" />
-        <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
       </map>
     </option>
   </component>

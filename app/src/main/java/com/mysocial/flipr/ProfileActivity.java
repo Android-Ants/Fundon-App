@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.mysocial.flipr.dashboard.DashboardActivity;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -39,7 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
         back1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ProfileActivity.this,DashboardActivity.class);
+                Intent intent=new Intent(ProfileActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 finish();
             }

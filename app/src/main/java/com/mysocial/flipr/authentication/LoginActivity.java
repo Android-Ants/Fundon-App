@@ -11,11 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.mysocial.flipr.DashboardActivity;
-import com.mysocial.flipr.DetailsActivity;
-import com.mysocial.flipr.MainActivity;
-import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
+import com.mysocial.flipr.dashboard.DashboardActivity;
 import com.mysocial.flipr.models.User;
 import com.mysocial.flipr.viewmodels.SignInViewModel;
 

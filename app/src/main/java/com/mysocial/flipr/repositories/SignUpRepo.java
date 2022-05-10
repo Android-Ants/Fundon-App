@@ -49,7 +49,6 @@ public class SignUpRepo {
 
                 try {
                     Toast.makeText(context, response.get("message").toString(), Toast.LENGTH_SHORT).show();
-                    message.postValue(response.get("message").toString());
                     token.postValue(response.get("token").toString());
                 } catch (JSONException e) {
                     e.printStackTrace();

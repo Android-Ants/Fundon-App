@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("Fundon",MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        userName = findViewById(R.id.usernamesignin);
+        userName = findViewById(R.id.emailsignin);
         password = findViewById(R.id.passwordsignin);
         login = findViewById(R.id.login);
         initViewModel();

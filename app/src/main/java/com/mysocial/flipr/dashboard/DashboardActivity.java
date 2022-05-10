@@ -1,36 +1,55 @@
 package com.mysocial.flipr.dashboard;
 
 import android.os.Bundle;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.navigation.NavigationBarView;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.databinding.ActivityDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
 
-private ActivityDashboardBinding binding;
+    private ActivityDashboardBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = ActivityDashboardBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-     binding = ActivityDashboardBinding.inflate(getLayoutInflater());
-     setContentView(binding.getRoot());
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment())
+                .commit();
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_dashboard, R.id.navigation_home, R.id.navigation_notifications)
-                .build();
+        binding.navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_bottom_navigation);
-        NavigationUI.setupWithNavController(navView, navController);
+                switch (item.getItemId()) {
+                    case R.id.navigation_dashboard:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new DashboardFragment())
+                                .commit();
+                        break;
 
+                    case R.id.navigation_loans:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new LoanFragment())
+                                .commit();
+                        break;
 
+                    case R.id.navigation_profile:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new ProfileFragment())
+                                .commit();
+                        break;
+                }
+
+                return true;
+            }
+        });
     }
-
 }

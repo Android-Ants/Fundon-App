@@ -63,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/background"
-                    android:hint="Enter the Email"
+                    android:hint="Enter the UserName"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"

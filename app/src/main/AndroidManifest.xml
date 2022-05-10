@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mysocial.flipr">
+    package="com.mysocial.flipr" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,13 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Flipr">
+        android:theme="@style/Theme.Flipr" >
+        <activity
+            android:name=".dashboard.DashboardActivity"
+            android:exported="false" />
         <activity
             android:name=".authentication.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +34,6 @@
         <activity android:name=".dashboard.DashboardActivity"/>
         <activity android:name=".BankDetailsActivity"/>
         <activity android:name=".ProfileActivity"/>
-
 
         <meta-data
             android:name="preloaded_fonts"

@@ -11,14 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.mysocial.flipr.DetailsActivity;
 import com.mysocial.flipr.MainActivity;
+import com.mysocial.flipr.ProfileActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.User;
 import com.mysocial.flipr.viewmodels.SignInViewModel;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextInputEditText email, password;
+    TextInputEditText userName, password;
     Button login;
     SignInViewModel viewModel;
 
@@ -26,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        email = findViewById(R.id.emailsignin);
+        userName = findViewById(R.id.usernamesignin);
         password = findViewById(R.id.passwordsignin);
         login = findViewById(R.id.login);
         initViewModel();
@@ -50,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         viewModel.getTokenObserver().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
                 intent.putExtra("token", s);
                 startActivity(intent);
             }
@@ -58,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signInUser() {
-        User user = new User(email.getText().toString(), password.getText().toString());
+        User user = new User(userName.getText().toString(), password.getText().toString());
         viewModel.signInUser(user, this);
     }
 

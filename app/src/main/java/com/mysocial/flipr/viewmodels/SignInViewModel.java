@@ -11,7 +11,7 @@ import com.mysocial.flipr.repositories.LoginRepo;
 public class SignInViewModel extends ViewModel {
 
     public MutableLiveData<User> user;
-    public MutableLiveData<String>  token;
+    public MutableLiveData<String> token;
     public LoginRepo repo;
 
     public SignInViewModel() {

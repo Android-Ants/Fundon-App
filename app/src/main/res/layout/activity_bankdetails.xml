@@ -4,22 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".authentication.SignUpActivity">
+    android:background="#E5E5E5"
+    tools:context=".BankDetailsActivity">
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#E5E5E5"
+        android:drawableTint="@color/black"
+        app:drawableStartCompat="@drawable/back_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/gorditas"
-        android:text="Fundon"
-        android:textColor="@color/primary"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Bank Details"
+        android:textColor="#6765E8"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/cardview"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -30,64 +41,67 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardview"
+        app:layout_constraintEnd_toEndOf="@+id/cardview"
+        app:layout_constraintStart_toStartOf="@+id/cardview"
+        app:layout_constraintTop_toTopOf="@+id/cardview">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:src="@drawable/download" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#FFFFFF"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="230dp"
-                android:fontFamily="@font/aldrich"
-                android:text="Sign Up"
-                android:textColor="#6765E8"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/TILnamesignup"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/TILnamesignup"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TILnamesignup"
+                android:id="@+id/TILaadhar"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:background="#F9FAFC"
                 android:elevation="7dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
-                app:layout_constraintBottom_toTopOf="@+id/TILemailsignup"
+                app:layout_constraintBottom_toTopOf="@+id/TILpan"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/TILemailsignup"
-                app:layout_constraintTop_toBottomOf="@+id/textView2">
+                app:layout_constraintStart_toStartOf="@+id/TILpan"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/namesignup"
+                    android:id="@+id/aadhar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
-                    android:hint="UserName"
+                    android:hint="AADHAR Number"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
@@ -95,7 +109,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TILemailsignup"
+                android:id="@+id/TILpan"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -106,18 +120,19 @@
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
-                app:layout_constraintBottom_toTopOf="@+id/TILpasswordsignup"
+                app:layout_constraintBottom_toTopOf="@+id/TILaccno"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/TILpasswordsignup"
-                app:layout_constraintTop_toBottomOf="@+id/TILnamesignup">
+                app:layout_constraintStart_toStartOf="@+id/TILaccno"
+                app:layout_constraintTop_toBottomOf="@+id/TILaadhar">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emailsignup"
+                    android:id="@+id/pan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
-                    android:hint="Email"
+                    android:hint="PAN Number"
+                    android:inputType="number"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
@@ -125,7 +140,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TILpasswordsignup"
+                android:id="@+id/TILaccno"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -136,21 +151,48 @@
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
-                app:layout_constraintBottom_toTopOf="@+id/signup"
+                app:layout_constraintBottom_toTopOf="@+id/TILifsc"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TILemailsignup"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black">
+                app:layout_constraintTop_toBottomOf="@+id/TILpan">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordsignup"
+                    android:id="@+id/accno"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
-                    android:hint="Password"
-                    android:inputType="textPassword"
+                    android:hint="Account Number"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TILifsc"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#F9FAFC"
+                android:elevation="7dp"
+                android:textColorHint="#707070"
+                app:boxStrokeColor="#6765E8"
+                app:hintTextColor="#6765E8"
+                app:layout_constraintBottom_toTopOf="@+id/proceed2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TILaccno">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ifsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/adamina"
+                    android:hint="IFSC Code"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
@@ -158,63 +200,25 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/signup"
+                android:id="@+id/proceed2"
                 android:layout_width="300dp"
                 android:layout_height="51dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginBottom="32dp"
                 android:background="@drawable/button_gradient"
-                android:fontFamily="@font/adamina"
-                android:text="Sign Up"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="PROceed"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TILpasswordsignup" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/montserrat_alternates"
-                android:text="Already Registered?"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/login2"
-                app:layout_constraintTop_toBottomOf="@+id/signup" />
-
-            <TextView
-                android:id="@+id/login2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="32dp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:textStyle="bold"
-                android:onClick="LoginPage"
-                android:text="Login"
-                android:textColor="#6765E8"
-                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signup" />
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TILifsc" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

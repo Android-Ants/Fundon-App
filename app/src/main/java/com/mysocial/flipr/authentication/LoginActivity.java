@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onChanged(String s) {
                 editor.putString("token" , s);
+                editor.putString("userName" , userName.getText().toString());
                 editor.commit();
                 Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                 intent.putExtra("token", s);

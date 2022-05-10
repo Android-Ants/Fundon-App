@@ -1,6 +1,8 @@
 package com.mysocial.flipr.models;
 
-public class DetailsModel {
+import java.io.Serializable;
+
+public class DetailsModel implements Serializable {
     public String email,userName,name,mobile,address,occupation,aadhaarNo,panNo,bankAccountNo,ifscCode,imgUrl,aadhaarUrl,panUrl,bankUrl;
     boolean isVerified;
 

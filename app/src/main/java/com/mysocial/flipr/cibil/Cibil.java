@@ -80,8 +80,7 @@ public class Cibil {
         else{
             score+=40*3/loanCountThisYear;
         }
-        int paymentExccedingDeadline=user.getPaymentExccedingDeadline();
-        score+=25*paymentExccedingDeadline/total;
+        score+=25*(user.getFinishedOverDue()+user.getCurrOverdue())/total;
         return score;
     }
 
@@ -93,10 +92,11 @@ public class Cibil {
         if (userCreditLimit>presentLoneAmount){
             score+=70*(userCreditLimit-presentLoneAmount)/userCreditLimit;
         }
-        int amountLoaned=user.getLibility();
+        int amountLoaned=user.getTotalLoanCredited();
         int amountPaid= user.getAmountPaid();
 
-        score+=30*amountPaid/(amountLoaned+amountPaid);
+        if (amountLoaned==0) return -1;
+        else score+=30*amountPaid/(amountLoaned);
         return score;
     }
 
@@ -107,7 +107,7 @@ public class Cibil {
         if (total==0) return -1;
         score+=60*(total-disapproved)/total;
         int amountpaid=user.getAmountPaid();
-        score+=40*amountpaid/(amountpaid+user.getLibility());
+        score+=40*amountpaid/(amountpaid+user.getTotalLoanCredited());
         return score;
     }
 

@@ -11,58 +11,33 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/gorditas"
         android:text="Fundon"
         android:textColor="@color/primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#FFFFFF"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="230dp"
-                android:fontFamily="@font/aldrich"
-                android:text="Sign Up"
-                android:textColor="#6765E8"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/TILnamesignup"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/TILnamesignup"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TILnamesignup"
@@ -71,24 +46,26 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:background="#F9FAFC"
-                android:elevation="7dp"
+                android:background="@color/white"
                 android:textColorHint="#707070"
-                app:boxStrokeColor="#6765E8"
-                app:hintTextColor="#6765E8"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/TILemailsignup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/TILemailsignup"
-                app:layout_constraintTop_toBottomOf="@+id/textView2">
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/username_vector"
+                app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/namesignup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/adamina"
-                    android:hint="UserName"
-                    android:padding="13dp"
+                    android:background="@color/background"
+                    android:hint="Username"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />
@@ -101,27 +78,30 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:background="#F9FAFC"
-                android:elevation="7dp"
+                android:background="@color/white"
                 android:textColorHint="#707070"
-                app:boxStrokeColor="#6765E8"
-                app:hintTextColor="#6765E8"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/TILpasswordsignup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/TILpasswordsignup"
-                app:layout_constraintTop_toBottomOf="@+id/TILnamesignup">
+                app:layout_constraintTop_toBottomOf="@+id/TILnamesignup"
+                app:startIconDrawable="@drawable/email_vector"
+                app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailsignup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/adamina"
+                    android:background="@color/background"
                     android:hint="Email"
-                    android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -132,7 +112,6 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="#F9FAFC"
-                android:elevation="7dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
@@ -142,12 +121,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TILemailsignup"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black">
+                app:passwordToggleTint="@color/black"
+                app:startIconDrawable="@drawable/key"
+                app:startIconTint="#AFAFFA">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordsignup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/background"
                     android:fontFamily="@font/adamina"
                     android:hint="Password"
                     android:inputType="textPassword"
@@ -159,16 +141,17 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signup"
-                android:layout_width="300dp"
-                android:layout_height="51dp"
+                android:layout_width="320dp"
+                android:layout_height="62dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/button_gradient"
-                android:fontFamily="@font/adamina"
                 android:text="Sign Up"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -210,7 +193,7 @@
         android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

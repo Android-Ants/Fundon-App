@@ -93,11 +93,6 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addDetails(params);
-
-                Intent intent =new Intent(DetailsActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
-
             }
         });
 
@@ -202,7 +197,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void addDetails(Map<String, String> params) {
-        DetailsModel model = new DetailsModel(
+                DetailsModel model = new DetailsModel(
                 params.get("email"),params.get("userName"),
                 params.get("name"), params.get("mobile"),
                 params.get("address"), params.get("occupation"),

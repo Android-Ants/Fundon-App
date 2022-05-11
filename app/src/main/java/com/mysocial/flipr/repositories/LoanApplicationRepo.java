@@ -79,6 +79,7 @@ public class LoanApplicationRepo {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString());
+                messageLoanApply.postValue(error.toString());
             }
         }) {
             @Override
@@ -137,6 +138,7 @@ public class LoanApplicationRepo {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString());
+                messageCibil.postValue(error.toString());
             }
         }) {
             @Override

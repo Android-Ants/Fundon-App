@@ -88,7 +88,6 @@ public class DashboardActivity extends AppCompatActivity {
                 progressDialog.dismiss();
 
                 if (s.equalsIgnoreCase("Profile Found")) {
-//                    Toast.makeText(DashboardActivity.this, "Profile Fetching Completed", Toast.LENGTH_SHORT).show();
                     dashboardViewModel.getProfileObserver().observe(DashboardActivity.this, new Observer<DetailsModel>() {
                         @Override
                         public void onChanged(DetailsModel detailModel) {

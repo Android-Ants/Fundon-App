@@ -34,14 +34,6 @@ public class BankDetailsActivity extends AppCompatActivity {
         proceed = findViewById(R.id.proceed2);
         back2=findViewById(R.id.back2);
 
-        if(detailsmodel.getAadhaarNo()!=null)
-            aadhar.setText(detailsmodel.getAadhaarNo());
-        if(detailsmodel.getPanNo()!=null)
-            pan.setText(detailsmodel.getPanNo());
-        if(detailsmodel.getBankAccountNo()!=null)
-            accno.setText(detailsmodel.getBankAccountNo());
-        if(detailsmodel.getIfscCode()!=null)
-            ifsc.setText(detailsmodel.getIfscCode());
         back2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

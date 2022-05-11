@@ -1,5 +1,6 @@
 package com.mysocial.flipr.repositories;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,12 +32,16 @@ public class DetailsRepo {
     private final MutableLiveData<String> message = new MutableLiveData<>();
     RequestQueue requestQueue;
     RequestQueue requestQueue2;
+    ProgressDialog progressDialog;
 
     public static DetailsRepo getInstance() {
         return instance;
     }
 
     public void detailscreate(DetailsModel model, Context context) {
+        progressDialog=new ProgressDialog(context);
+        progressDialog.setMessage("Updating Your Profile . Please Wait");
+        progressDialog.show();
 
         Map<String, String> params = new HashMap<>();
         params.put("email", model.getEmail());
@@ -96,6 +101,7 @@ public class DetailsRepo {
             public void onResponse(JSONObject response) {
                 Log.d("response", response.toString());
                 try {
+                    progressDialog.dismiss();
                     Toast.makeText(context, response.get("message").toString(), Toast.LENGTH_SHORT).show();
                     message.postValue(response.get("message").toString());
                 } catch (JSONException e) {

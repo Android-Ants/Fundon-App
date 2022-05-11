@@ -29,6 +29,7 @@ import com.mysocial.flipr.models.DetailsModel;
 import com.mysocial.flipr.viewmodels.DetailsViewModel;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,12 +40,14 @@ public class DetailsActivity extends AppCompatActivity {
     Uri aadharFile, panFile, banKDetailsFile;
     String aadharFileLink, panFileLink, banKDetailsFileLink;
     boolean isVerified=false;
+    DetailsModel detailsmodel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDocumentsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        detailsmodel=(DetailsModel) getIntent().getSerializableExtra("abba");
 
         initViewModel();
 
@@ -90,6 +93,11 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addDetails(params);
+
+                Intent intent =new Intent(DetailsActivity.this, DashboardActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 
@@ -105,6 +113,7 @@ public class DetailsActivity extends AppCompatActivity {
             // Here we are initialising the progress dialog box
             dialog = new ProgressDialog(this);
             dialog.setMessage("Uploading");
+            dialog.setCancelable(false);
 
             Uri imageuri = data.getData();
             File file = new File(imageuri.getPath());
@@ -177,14 +186,6 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent=new Intent(DetailsActivity.this,BankDetailsActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     private void initViewModel() {
         viewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
         viewModel.getMessageUserObserver().observe(this, new Observer<String>() {
@@ -211,5 +212,13 @@ public class DetailsActivity extends AppCompatActivity {
                 panFileLink,banKDetailsFileLink, isVerified);
 
         viewModel.createdetails(model, DetailsActivity.this);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(DetailsActivity.this,BankDetailsActivity.class);
+        intent.putExtra("abba",(Serializable)detailsmodel);
+        startActivity(intent);
+        finish();
     }
 }

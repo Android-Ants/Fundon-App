@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.mysocial.flipr.dashboard.DashboardActivity;
+import com.mysocial.flipr.models.DetailsModel;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -23,12 +24,15 @@ public class ProfileActivity extends AppCompatActivity {
     TextInputEditText name, mobile, address, occupation;
     ImageView profilephoto;
     Button proceed;
+    DetailsModel detailsmodel;
     TextView back1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
+
+        detailsmodel=(DetailsModel) getIntent().getSerializableExtra("abba");
         name = findViewById(R.id.nameagain);
         mobile = findViewById(R.id.phnnoagain);
         address = findViewById(R.id.addressagain);
@@ -36,6 +40,15 @@ public class ProfileActivity extends AppCompatActivity {
         proceed = findViewById(R.id.proceed);
         profilephoto=findViewById(R.id.profilephoto);
         back1=findViewById(R.id.back1);
+
+        if(detailsmodel.getName()!=null)
+            name.setText(detailsmodel.getName());
+        if(detailsmodel.getMobile()!=null)
+            mobile.setText(detailsmodel.getMobile());
+        if(detailsmodel.getAddress()!=null)
+            address.setText(detailsmodel.getAddress());
+        if(detailsmodel.getOccupation()!=null)
+            occupation.setText(detailsmodel.getOccupation());
 
         back1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
                 params.put("imgUrl","blah");
                 Intent intent = new Intent(ProfileActivity.this, BankDetailsActivity.class);
                 intent.putExtra("1st page", (Serializable) params);
+                intent.putExtra("abba",(Serializable) detailsmodel);
 
 //                Log.d("params", String.valueOf(params));
                 startActivity(intent);

@@ -177,63 +177,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/disp_occupation" />
 
-        <TextView
-            android:id="@+id/disp_pan"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:text="PAN no,"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@+id/disp_aadhar"
-            app:layout_constraintTop_toTopOf="@+id/disp_aadhar" />
-
-        <TextView
-            android:id="@+id/disp_aadhar"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="60dp"
-            android:text="Aadhar"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/disp_address" />
-
-        <TextView
-            android:id="@+id/disp_ifsc"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:text="IFSC Code"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@+id/disp_pan"
-            app:layout_constraintTop_toTopOf="@+id/disp_pan" />
-
-        <TextView
-            android:id="@+id/disp_bankacc"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginStart="43dp"
-            android:text="Bank Account"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/disp_ifsc"
-            app:layout_constraintTop_toTopOf="@+id/disp_ifsc" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             android:layout_width="300dp"
             android:layout_height="51dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/button_gradient"
             android:elevation="10dp"
             android:fontFamily="@font/montserrat"
             android:text="Edit"
-            android:layout_marginBottom="32dp"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -242,8 +196,25 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/disp_address" />
+            app:layout_constraintTop_toBottomOf="@+id/disp_address"
+            app:layout_constraintVertical_bias="0.21" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signOut"
+            android:layout_width="300dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/button_gradient"
+            android:elevation="10dp"
+            android:fontFamily="@font/montserrat"
+            android:text="SignOut"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

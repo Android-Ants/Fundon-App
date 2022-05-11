@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import com.mysocial.flipr.R;
 import com.mysocial.flipr.models.DetailsModel;
 
 import com.mysocial.flipr.models.User;
+
+import java.io.Serializable;
 
 public class ProfileFragment extends Fragment {
 
@@ -69,9 +72,12 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent =new Intent(getContext(), ProfileActivity.class);
+                    Log.d("abba",detailsModel.toString());
+                    intent.putExtra("abba",(Serializable) detailsModel);
                     startActivity(intent);
                 }
             });
+
         }
     }
 }

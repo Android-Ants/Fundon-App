@@ -9,7 +9,7 @@ public class Cibil {
     public Cibil() {
     }
 
-    void setProfile(User user){
+    public User setProfile(User user){
         int cibil=getCIBIL(user);
         user.setCIBIL(cibil);
         int loanpaid=user.getAmountPaid();
@@ -17,9 +17,10 @@ public class Cibil {
         if (cibil==-1) maxLoanAmount=1000;
         else maxLoanAmount=cibil*loanpaid/700;
         user.setMaxCredit(maxLoanAmount);
+        return user ;
     }
 
-    int getCIBIL(User user){
+    public int getCIBIL(User user){
         int score=300;
         if (pastPerformance(user)!=-1)
             score+=4*30*pastPerformance(user)/100;

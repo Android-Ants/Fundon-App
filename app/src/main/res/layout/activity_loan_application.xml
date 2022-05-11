@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -10,11 +9,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/gorditas"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat"
         android:text="Your Credit Score"
         android:textColor="#6765E8"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,32 +22,94 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="450dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#FFFFFF"
         app:cardCornerRadius="25dp"
         app:cardElevation="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="25dp"
+                android:elevation="7dp"
+                android:textColorHint="#707070"
+                app:boxStrokeColor="#6765E8"
+                app:hintTextColor="#6765E8"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TILLoanTenure">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loaninterest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/small_button"
+                    android:backgroundTint="@color/background"
+                    android:fontFamily="@font/adamina"
+                    android:inputType="number"
+                    android:padding="13dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:elevation="0.1dp"
+                android:padding="3dp"
+                android:text="Enter Loan Amount"
+                android:textColor="#6E717C"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/TILLoanAmount"
+                app:layout_constraintStart_toStartOf="@+id/TILLoanAmount"
+                app:layout_constraintTop_toTopOf="@+id/TILLoanAmount" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:padding="3dp"
+                android:text="Loan Tenure/Term"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/TILLoanTenure"
+                app:layout_constraintStart_toStartOf="@+id/TILLoanTenure"
+                app:layout_constraintTop_toTopOf="@+id/TILLoanTenure" />
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TILLoanAmount"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginRight="25dp"
-                android:background="#F9FAFC"
-                android:elevation="7dp"
+                android:background="@drawable/small_button"
+                android:backgroundTint="@color/background"
+                android:elevation="0dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
                 app:hintTextColor="#6765E8"
@@ -60,24 +122,24 @@
                     android:id="@+id/loanamount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/adamina"
-                    android:hint="Enter the Loan Amount"
+                    android:background="@drawable/small_button"
+                    android:fontFamily="@font/montserrat"
                     android:inputType="number"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TILLoanTenure"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginRight="25dp"
-                android:background="#F9FAFC"
                 android:elevation="7dp"
                 android:textColorHint="#707070"
                 app:boxStrokeColor="#6765E8"
@@ -91,13 +153,15 @@
                     android:id="@+id/loantenure"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/small_button"
+                    android:backgroundTint="@color/background"
                     android:fontFamily="@font/adamina"
-                    android:hint="Loan Tenure/Term"
                     android:inputType="number"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -115,37 +179,12 @@
                 app:layout_constraintEnd_toEndOf="@+id/TILLoanTenure"
                 app:layout_constraintTop_toTopOf="@+id/TILLoanTenure" />
 
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="8dp"
-                android:text="Applicable interest rate in % :"
-                android:textColor="#6765E8"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toStartOf="@+id/loaninterest"
-                app:layout_constraintTop_toBottomOf="@+id/TILLoanTenure" />
-
-            <TextView
-                android:id="@+id/loaninterest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:text="5"
-                android:textColor="#25292D"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView20" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/apply"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
-                android:layout_marginBottom="4dp"
                 android:backgroundTint="@color/primary"
-                android:fontFamily="@font/adamina"
+                android:fontFamily="@font/montserrat"
                 android:text="Apply Now"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -153,22 +192,22 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.603"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:layout_marginBottom="8dp"
                 android:text="I agree to the Terms &amp; Conditions and Policy"
-                android:textSize="13sp"
                 android:textColor="@color/black"
-                app:layout_constraintBottom_toTopOf="@+id/login_otp"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/checkBox"
-                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -179,6 +218,18 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="3dp"
+                android:text="Interest Rate %"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -187,7 +238,6 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
         android:paddingLeft="75dp"
@@ -204,8 +254,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/cardview"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -221,12 +271,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
+            android:id="@+id/credit_limit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rs. 10,000"
             android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

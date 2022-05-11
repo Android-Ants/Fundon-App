@@ -29,7 +29,7 @@
         <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/fragment_loans.xml" value="0.25416666666666665" />
         <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
-        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/fragment_profile.xml" value="0.152" />
+        <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Dev/Flipr/CodeQ/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ansh/Flipr/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/drawable/button_gradient.xml" value="0.1" />
@@ -94,6 +94,7 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16_PREVIEW" project-jdk-name="JDK" project-jdk-type="JavaSDK">
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/activity_upload_documents.xml" value="0.1" />
         <entry key="..\:/Users/ganta/Desktop/Projects/CodeQ/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+
 
       </map>
     </option>

@@ -68,7 +68,7 @@ public class DashboardActivity extends AppCompatActivity {
 
                     case R.id.navigation_profile:
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new ProfileFragment(detailsModel))
+                                .replace(R.id.nav_host_fragment_activity_bottom_navigation, new ProfileFragment(detailsModel , DashboardActivity.this))
                                 .commit();
                         break;
                 }

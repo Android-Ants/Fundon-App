@@ -24,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.mysocial.flipr.LoanApplicationActivity;
 import com.mysocial.flipr.R;
+import com.mysocial.flipr.ReminderActivity;
 import com.mysocial.flipr.adapter.LoanAdapter;
 import com.mysocial.flipr.models.DetailsModel;
 import com.mysocial.flipr.models.Loan;
@@ -85,6 +86,16 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity() , LoanApplicationActivity.class);
+                intent.putExtra("detail" , detailsModel);
+                startActivity(intent);
+            }
+        });
+
+        Button button2 = view.findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity() , ReminderActivity.class);
                 intent.putExtra("detail" , detailsModel);
                 startActivity(intent);
             }

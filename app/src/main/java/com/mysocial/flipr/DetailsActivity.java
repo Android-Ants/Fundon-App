@@ -105,6 +105,7 @@ public class DetailsActivity extends AppCompatActivity {
             // Here we are initialising the progress dialog box
             dialog = new ProgressDialog(this);
             dialog.setMessage("Uploading");
+            dialog.setCancelable(false);
 
             Uri imageuri = data.getData();
             File file = new File(imageuri.getPath());

@@ -57,7 +57,7 @@ public class LoanApplicationActivity extends AppCompatActivity {
             public void onChanged(String s) {
                 if ( s.equalsIgnoreCase("Successfully Applied for Loan") )
                 {
-                    Toast.makeText(LoanApplicationActivity.this, "Successfully Applied for Loan", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoanApplicationActivity.this, "Successfully Applied for Loan", Toast.LENGTH_SHORT).show();
                     loanamount.getText().clear();
                     loantenure.getText().clear();
                 }

@@ -165,7 +165,6 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
                     android:hint="Address"
-                    android:maxLength="20"
                     android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"

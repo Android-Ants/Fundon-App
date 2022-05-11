@@ -10,6 +10,7 @@
         android:background="@color/card_background"
         tools:context=".dashboard.ui.notifications.ProfileFragment">
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"

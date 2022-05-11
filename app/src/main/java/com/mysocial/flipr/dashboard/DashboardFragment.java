@@ -208,13 +208,11 @@ public class DashboardFragment extends Fragment {
                         loan.setInterestRate(object2.getDouble("interestRate"));
                         loan.setSecured(object2.getBoolean("secured"));
                         if(loan.getBorrowerUserName().equalsIgnoreCase("tarunstu125")){
-                            Toast.makeText(context, ""+loan.getLoanAmount(), Toast.LENGTH_SHORT).show();
                             borrowedAmount+=loan.getLoanAmount();
                             avgBorrowedRate+= (loan.getLoanTenure()*loan.getInterestRate());
                             monthBorrowed+=loan.getLoanTenure();
                             minBorrow = Math.min(minBorrow, loan.getLoanTenure());
                         }else if(loan.getLenderUserName().equalsIgnoreCase("tarunstu125")){
-                            Toast.makeText(context, ""+loan.getLoanAmount(), Toast.LENGTH_SHORT).show();
                             lentAmount+=loan.getLoanAmount();
                             avgLentRate+= (loan.getLoanTenure()*loan.getInterestRate());
                             monthLent+=loan.getLoanTenure();

@@ -4,34 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5"
+    android:background="@color/background"
     tools:context=".DetailsActivity">
 
     <TextView
         android:id="@+id/back1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="#E5E5E5"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/small_button"
         android:drawableTint="@color/color_primary"
         app:drawableStartCompat="@drawable/back_arrow"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat_alternates"
         android:text="Personal Details"
-        android:textColor="#6765E8"
+        android:textColor="@color/primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/back1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -66,14 +66,13 @@
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#FFFFFF"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -84,7 +83,7 @@
                 android:id="@+id/TILnameagain"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
@@ -115,7 +114,7 @@
                 android:id="@+id/TILphnoagain"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="#F9FAFC"
@@ -146,7 +145,7 @@
                 android:id="@+id/TILaddressagain"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="#F9FAFC"
@@ -166,8 +165,8 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/adamina"
                     android:hint="Address"
-                    android:padding="13dp"
                     android:maxLength="20"
+                    android:padding="13dp"
                     android:textColor="@color/black"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />

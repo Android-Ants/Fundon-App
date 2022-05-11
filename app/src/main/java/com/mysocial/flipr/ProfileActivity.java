@@ -60,14 +60,17 @@ public class ProfileActivity extends AppCompatActivity {
         profilephoto = findViewById(R.id.profilephoto);
         back1 = findViewById(R.id.back1);
 
-        if (detailsmodel.getName() != null)
-            name.setText(detailsmodel.getName());
-        if (detailsmodel.getMobile() != null)
-            mobile.setText(detailsmodel.getMobile());
-        if (detailsmodel.getAddress() != null)
-            address.setText(detailsmodel.getAddress());
-        if (detailsmodel.getOccupation() != null)
-            occupation.setText(detailsmodel.getOccupation());
+        if ( string.equalsIgnoreCase("modify" ))
+        {
+            if (detailsmodel.getName() != null)
+                name.setText(detailsmodel.getName());
+            if (detailsmodel.getMobile() != null)
+                mobile.setText(detailsmodel.getMobile());
+            if (detailsmodel.getAddress() != null)
+                address.setText(detailsmodel.getAddress());
+            if (detailsmodel.getOccupation() != null)
+                occupation.setText(detailsmodel.getOccupation());
+        }
 
         if (string.equalsIgnoreCase("modify")) {
             proceed.setText("Update");

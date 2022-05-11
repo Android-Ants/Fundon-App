@@ -98,6 +98,7 @@ public class DashboardActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(DashboardActivity.this, "First Complete Profile", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(DashboardActivity.this, ProfileActivity.class);
+                    intent.putExtra("string" , "create");
                     startActivity(intent);
                     finish();
                 }

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
-    android:backgroundTint="@color/primary"
+    android:background="@color/card_background"
+    android:backgroundTint="@color/card_background"
     tools:context=".dashboard.DashboardFragment">
 
     <androidx.core.widget.NestedScrollView

@@ -231,14 +231,14 @@ public class DashboardFragment extends Fragment {
                     if(monthBorrowed!=0){
                         borrowDescription.setText("at " + (avgBorrowedRate / monthBorrowed) + "% (avg.) paid before \n " + minBorrow + " months");
                     }else{
-                        borrowDescription.setText("at  0% (avg.) paid before \n 0 months");
+                        borrowDescription.setText("at  0% (avg.) pay before \n 0 months");
                     }
 
                     lend.setText("₹ "+lentAmount);
                     if(monthLent!=0){
                         lentDescription.setText("at " + (avgLentRate / monthLent) + "% (avg.) paid before \n " + minLent + " months");
                     }else{
-                        lentDescription.setText("at  0% (avg.) paid before \n 0 months");
+                        lentDescription.setText("at  0% (avg.) you get paid\nbefore 0 months");
                     }
 
 

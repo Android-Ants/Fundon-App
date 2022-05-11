@@ -48,6 +48,7 @@ public class DashboardActivity extends AppCompatActivity {
                         new LoanFragment(DashboardActivity.this, sharedPreferences.getString("token", ""), detailsModel))
                 .commit();
 
+
         binding.navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -85,6 +86,7 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onChanged(String s) {
                 progressDialog.dismiss();
+
                 if (s.equalsIgnoreCase("Profile Found")) {
 //                    Toast.makeText(DashboardActivity.this, "Profile Fetching Completed", Toast.LENGTH_SHORT).show();
                     dashboardViewModel.getProfileObserver().observe(DashboardActivity.this, new Observer<DetailsModel>() {

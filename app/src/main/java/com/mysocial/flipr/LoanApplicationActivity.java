@@ -1,7 +1,6 @@
 package com.mysocial.flipr;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,17 +11,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.mysocial.flipr.authentication.SignUpActivity;
 import com.mysocial.flipr.models.DetailsModel;
-import com.mysocial.flipr.models.LoanApplicationModel;
-import com.mysocial.flipr.models.User;
+import com.mysocial.flipr.models.Loan;
 import com.mysocial.flipr.viewmodels.LoanApplicationViewModel;
-import com.mysocial.flipr.viewmodels.SignInViewModel;
-import com.mysocial.flipr.viewmodels.SignUpViewModel;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class LoanApplicationActivity extends AppCompatActivity {
     LoanApplicationViewModel viewModel;
@@ -53,7 +44,7 @@ public class LoanApplicationActivity extends AppCompatActivity {
     }
 
     private void createloan() {
-        LoanApplicationModel model = new LoanApplicationModel(randomid(),detailsModel.getUserName(),detailsModel.getEmail(),
+        Loan model = new Loan(randomid(),detailsModel.getUserName(),detailsModel.getEmail(),
                 "__","__","applied","a",Integer.valueOf(loanamount.getText().toString())
                 ,Integer.valueOf(loantenure.getText().toString()),5,true);
         viewModel.createNewLoan(model, LoanApplicationActivity.this);
@@ -76,5 +67,10 @@ public class LoanApplicationActivity extends AppCompatActivity {
     }
     private String randomid(){
         return String.valueOf(System.currentTimeMillis());
+    }
+
+    private void get_cibil()
+    {
+
     }
 }

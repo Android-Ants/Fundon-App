@@ -110,7 +110,6 @@ public class DashboardFragment extends Fragment {
                 Log.d("response", response.toString());
 
                 try {
-                    Toast.makeText(context, response.get("message").toString(), Toast.LENGTH_SHORT).show();
 
                     JSONArray array = response.getJSONArray("response");
                     for ( int i=0 ; i < array.length() ; i++ )
@@ -169,7 +168,6 @@ public class DashboardFragment extends Fragment {
                 Log.d("response", response.toString());
 
                 try {
-                    Toast.makeText(context, response.get("message").toString(), Toast.LENGTH_SHORT).show();
 
                     JSONArray array = response.getJSONArray("response");
                     for ( int i=0 ; i < array.length() ; i++ )

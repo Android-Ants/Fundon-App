@@ -15,6 +15,20 @@ public class Loan implements Serializable {
 
     }
 
+    public Loan(String id, String borrowerUserName, String borrowerEmail, String lenderUserName, String lenderEmail, String status, String date, int loanAmount, int loanTenure, double interestRate, Boolean secured) {
+        this.id = id;
+        this.borrowerUserName = borrowerUserName;
+        this.borrowerEmail = borrowerEmail;
+        this.lenderUserName = lenderUserName;
+        this.lenderEmail = lenderEmail;
+        this.status = status;
+        this.date = date;
+        this.loanAmount = loanAmount;
+        this.loanTenure = loanTenure;
+        this.interestRate = interestRate;
+        this.secured = secured;
+    }
+
     public String getId() {
         return id;
     }

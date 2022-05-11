@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.mysocial.flipr.models.LoanApplicationModel;
+import com.mysocial.flipr.models.Loan;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,32 +23,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoanApplicationRepo {
+
     private static final LoanApplicationRepo instance = new LoanApplicationRepo();
     private final MutableLiveData<String> message = new MutableLiveData<>();
     RequestQueue requestQueue;
+    private final String APPLY_URL = "https://codeq-flipr.herokuapp.com/api/loan/create" ;
+    private final String GET_CIBIL ="https://codeq-flipr.herokuapp.com/api/cibil/get";
 
 
     public static LoanApplicationRepo getInstance() {
         return instance;
     }
 
-    public void loanapply(LoanApplicationModel model, Context context) {
+    public void loanapply(Loan model, Context context) {
         Map<String, Object> params = new HashMap<>();
         params.put("id", model.getId());
         params.put("borrowerUserName", model.getBorrowerUserName());
         params.put("borrowerEmail", model.getBorrowerEmail());
         params.put("lenderUserName", model.getLenderUserName());
         params.put("lenderEmail", model.getLenderEmail());
-        params.put("loanAmount", model.getLoanAmount());
-        params.put("loanTenure", model.getLoanTenure());
-        params.put("interestRate", model.getInterestRate());
         params.put("status", model.getStatus());
-        params.put("secured", model.getSecured());
         params.put("date", model.getDate());
 
-        String url = "https://codeq-flipr.herokuapp.com/api/loan/create";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
-                new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
+
+        JSONObject object = new JSONObject(params);
+        try {
+            object.put("loanAmount", model.getLoanAmount());
+            object.put("loanTenure", model.getLoanTenure());
+            object.put("interestRate", model.getInterestRate());
+            object.put("secured", model.getSecured());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, APPLY_URL ,
+                object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("response", response.toString());
@@ -71,14 +80,19 @@ public class LoanApplicationRepo {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 SharedPreferences sharedPreferences = context.getSharedPreferences("All Details", Context.MODE_PRIVATE);
                 String tomken = sharedPreferences.getString("token", "");
-//                Log.d("token",tomken);
                 Map<String, String> map = new HashMap<>();
                 map.put("Authorization", "Bearer " + tomken);
+                params.put("Content-Type", "application/json; charset=utf-8");
                 return map;
             }
         };
         requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(jsonObjectRequest);
+    }
+
+    public void get_cibil_details ()
+    {
+
     }
 
     public MutableLiveData<String> getMessage() {

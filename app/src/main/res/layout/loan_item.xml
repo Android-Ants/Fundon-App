@@ -132,6 +132,34 @@
                 app:layout_constraintTop_toTopOf="@+id/requestUsername"
                 app:layout_constraintVertical_bias="0.0" />
 
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/ic_baseline_circle_24" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="On Going"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

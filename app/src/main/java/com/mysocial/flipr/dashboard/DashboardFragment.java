@@ -1,6 +1,7 @@
 package com.mysocial.flipr.dashboard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -21,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.mysocial.flipr.LoanApplicationActivity;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.adapter.LoanAdapter;
 import com.mysocial.flipr.adapter.TransactionsAdapter;
@@ -72,14 +75,14 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        get_applied_loans();
+        get_accepted_loans();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        get_applied_loans();
-        get_accepted_loans();
 
 
         borrow = view.findViewById(R.id.borrowed_amount);
@@ -92,6 +95,18 @@ public class DashboardFragment extends Fragment {
         adapter = new TransactionsAdapter(loans, context);
         recyclerView.setAdapter(adapter);
 
+        Button button = view.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity() , LoanApplicationActivity.class);
+                intent.putExtra("detail" , detailsModel);
+                startActivity(intent);
+            }
+        });
+
+        get_applied_loans();
+        get_accepted_loans();
 
 
 

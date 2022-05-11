@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -82,19 +83,29 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_loan, container, false);
-        get_all_loans();
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         adapter = new LoanAdapter(context , loans , this::accept_loan , "loan");
         recyclerView.setAdapter(adapter);
 
+        get_all_loans();
+
+        SwipeRefreshLayout layout = view.findViewById(R.id.layout);
+        layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                get_all_loans();
+                layout.setRefreshing(false);
+            }
+        });
 
         return view ;
     }
 
     private void get_all_loans ()
     {
+        loans.clear();
         requestQueue = Volley.newRequestQueue(context);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
@@ -123,6 +134,7 @@ public class LoanFragment extends Fragment implements LoanAdapter.On_Click {
                         loans.add(loan);
                         adapter.notifyDataSetChanged();
                     }
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,6 +23,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.mysocial.flipr.R;
 import com.mysocial.flipr.adapter.LoanAdapter;
+import com.mysocial.flipr.adapter.TransactionsAdapter;
 import com.mysocial.flipr.models.DetailsModel;
 import com.mysocial.flipr.models.Loan;
 
@@ -47,8 +49,12 @@ public class DashboardFragment extends Fragment {
     private List<Loan> loans = new ArrayList<>();
     private String token ;
     private RequestQueue requestQueue ;
-    private LoanAdapter adapter ;
+    private TransactionsAdapter adapter ;
 
+    private int lentAmount, borrowedAmount, avgLentRate, avgBorrowedRate, monthBorrowed, monthLent, minBorrow, minLent;
+
+
+    TextView borrow, lend, borrowDescription, lentDescription;
 
     public DashboardFragment(DetailsModel detailsModel , Context context , String token ) {
         // Required empty public constructor
@@ -56,6 +62,9 @@ public class DashboardFragment extends Fragment {
         this.context = context ;
         this.token = token ;
         requestQueue = Volley.newRequestQueue(context) ;
+        lentAmount = borrowedAmount = 0;
+        avgBorrowedRate = avgLentRate = monthLent = monthBorrowed = 0;
+        minLent = minBorrow = 1000000;
     }
 
 
@@ -72,10 +81,18 @@ public class DashboardFragment extends Fragment {
         get_applied_loans();
         get_accepted_loans();
 
+
+        borrow = view.findViewById(R.id.borrowed_amount);
+        lend = view.findViewById(R.id.lend_amount);
+        borrowDescription = view.findViewById(R.id.borrow_description);
+        lentDescription = view.findViewById(R.id.lend_description);
+
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        adapter = new LoanAdapter(context , loans , "dashboard");
+        adapter = new TransactionsAdapter(loans, context);
         recyclerView.setAdapter(adapter);
+
+
 
 
         return view ;
@@ -83,6 +100,7 @@ public class DashboardFragment extends Fragment {
 
     private void get_applied_loans ()
     {
+
         Map<String, String> params = new HashMap<>();
         params.put("borrowerUserName", detailsModel.getUserName() );
         params.put("borrowerEmail", detailsModel.getEmail() );
@@ -113,9 +131,11 @@ public class DashboardFragment extends Fragment {
                         loan.setLoanTenure(object2.getInt("loanTenure"));
                         loan.setInterestRate(object2.getDouble("interestRate"));
                         loan.setSecured(object2.getBoolean("secured"));
+
                         loans.add(loan);
                         adapter.notifyDataSetChanged();
                     }
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -172,9 +192,37 @@ public class DashboardFragment extends Fragment {
                         loan.setLoanTenure(object2.getInt("loanTenure"));
                         loan.setInterestRate(object2.getDouble("interestRate"));
                         loan.setSecured(object2.getBoolean("secured"));
+                        if(loan.getBorrowerUserName().equalsIgnoreCase("tarunstu125")){
+                            Toast.makeText(context, ""+loan.getLoanAmount(), Toast.LENGTH_SHORT).show();
+                            borrowedAmount+=loan.getLoanAmount();
+                            avgBorrowedRate+= (loan.getLoanTenure()*loan.getInterestRate());
+                            monthBorrowed+=loan.getLoanTenure();
+                            minBorrow = Math.min(minBorrow, loan.getLoanTenure());
+                        }else if(loan.getLenderUserName().equalsIgnoreCase("tarunstu125")){
+                            Toast.makeText(context, ""+loan.getLoanAmount(), Toast.LENGTH_SHORT).show();
+                            lentAmount+=loan.getLoanAmount();
+                            avgLentRate+= (loan.getLoanTenure()*loan.getInterestRate());
+                            monthLent+=loan.getLoanTenure();
+                            minLent = Math.min(minLent, loan.getLoanTenure());
+                        }
                         loans.add(loan);
                         adapter.notifyDataSetChanged();
                     }
+
+                    borrow.setText("₹ "+borrowedAmount);
+                    if(monthBorrowed!=0){
+                        borrowDescription.setText("at " + (avgBorrowedRate / monthBorrowed) + "% (avg.) paid before \n " + minBorrow + " months");
+                    }else{
+                        borrowDescription.setText("at  0% (avg.) paid before \n 0 months");
+                    }
+
+                    lend.setText("₹ "+lentAmount);
+                    if(monthLent!=0){
+                        lentDescription.setText("at " + (avgLentRate / monthLent) + "% (avg.) paid before \n " + minLent + " months");
+                    }else{
+                        lentDescription.setText("at  0% (avg.) paid before \n 0 months");
+                    }
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -198,4 +246,6 @@ public class DashboardFragment extends Fragment {
         requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(jsonObjectRequest);
     }
+
+
 }

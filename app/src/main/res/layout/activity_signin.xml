@@ -96,7 +96,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TILemailsignin"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black"
+                app:passwordToggleTint="@color/primary_variant"
                 app:startIconDrawable="@drawable/ic_key"
                 app:startIconTint="#AFAFFA">
 
@@ -108,7 +108,7 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="13dp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textColorHint="#707070"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>

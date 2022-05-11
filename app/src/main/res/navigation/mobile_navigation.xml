@@ -9,19 +9,19 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.mysocial.flipr.dashboard.ui.dashboard.DashboardFragment"
+        android:name="com.mysocial.flipr.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.mysocial.flipr.dashboard.ui.home.LoansFragment"
+        android:name="com.mysocial.flipr.dashboard.LoanFragment"
         android:label="@string/title_loan_timeline"
-        tools:layout="@layout/fragment_loans" />
+        tools:layout="@layout/fragment_loan" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.mysocial.flipr.dashboard.ui.notifications.ProfileFragment"
+        android:name="com.mysocial.flipr.dashboard.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

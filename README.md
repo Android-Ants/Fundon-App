@@ -1,7 +1,7 @@
 
 # Fundon App ( CodeQ )
 
-Fundon, a C2C (Customer to Customer) personal loan lending platform which can be used be request loan from other users on the application
+Fundon, a C2C (Customer to Customer) personal loan lending platform based on MVVM model which can be used be request loan from other users on the application
 and can also lend money to them.
 
 ### Features of the Application
@@ -13,6 +13,7 @@ and can also lend money to them.
 * Credit Score Calculation
 * Loan Application Form
 * Mail Notifications
+* Loan Modification & Acceptance
 
 
 

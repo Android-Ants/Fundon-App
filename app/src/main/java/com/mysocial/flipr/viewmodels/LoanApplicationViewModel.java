@@ -5,10 +5,8 @@ import android.content.Context;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.mysocial.flipr.models.LoanApplicationModel;
-import com.mysocial.flipr.models.User;
+import com.mysocial.flipr.models.Loan;
 import com.mysocial.flipr.repositories.LoanApplicationRepo;
-import com.mysocial.flipr.repositories.SignUpRepo;
 
 public class LoanApplicationViewModel extends ViewModel {
 
@@ -26,7 +24,7 @@ public class LoanApplicationViewModel extends ViewModel {
         return message;
     }
 
-    public void createNewLoan(LoanApplicationModel model, Context context) {
+    public void createNewLoan(Loan model, Context context) {
         repo.loanapply(model, context);
     }
 }

@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.mysocial.flipr.models.LoanApplicationModel;
+import com.mysocial.flipr.models.Loan;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,16 +23,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoanApplicationRepo {
+
     private static final LoanApplicationRepo instance = new LoanApplicationRepo();
     private final MutableLiveData<String> message = new MutableLiveData<>();
     RequestQueue requestQueue;
+    private final String APPLY_URL = "https://codeq-flipr.herokuapp.com/api/loan/create" ;
+    private final String GET_CIBIL ="https://codeq-flipr.herokuapp.com/api/cibil/get";
 
 
     public static LoanApplicationRepo getInstance() {
         return instance;
     }
 
-    public void loanapply(LoanApplicationModel model, Context context) {
+    public void loanapply(Loan model, Context context) {
         Map<String, Object> params = new HashMap<>();
         params.put("id", model.getId());
         params.put("borrowerUserName", model.getBorrowerUserName());
@@ -53,10 +56,7 @@ public class LoanApplicationRepo {
             e.printStackTrace();
         }
 
-        Log.d("hhhhhhhhh" , object.toString());
-
-        String url = "https://codeq-flipr.herokuapp.com/api/loan/create";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, APPLY_URL ,
                 object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -88,6 +88,11 @@ public class LoanApplicationRepo {
         };
         requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(jsonObjectRequest);
+    }
+
+    public void get_cibil_details ()
+    {
+
     }
 
     public MutableLiveData<String> getMessage() {

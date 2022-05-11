@@ -14,7 +14,7 @@ public class Cibil {
         user.setCIBIL(cibil);
         int loanpaid=user.getAmountPaid();
         int maxLoanAmount=0;
-        if (cibil==-1) maxLoanAmount=1000;
+        if (cibil==-1 || loanpaid == 0) maxLoanAmount=1000;
         else maxLoanAmount=cibil*loanpaid/700;
         user.setMaxCredit(maxLoanAmount);
         return user ;

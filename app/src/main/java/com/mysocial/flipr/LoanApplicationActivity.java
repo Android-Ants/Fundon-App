@@ -2,6 +2,7 @@ package com.mysocial.flipr;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -120,6 +121,8 @@ public class LoanApplicationActivity extends AppCompatActivity {
                     });
                 } else {
                     modelUser = new User() ;
+                    credit_score.setText(String.valueOf("Not Applicable"));
+                    credit_limit.setText("Rs. 1000" );
                     Toast.makeText(LoanApplicationActivity.this, "No Cibil Exists", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }

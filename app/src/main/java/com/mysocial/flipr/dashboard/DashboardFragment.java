@@ -105,9 +105,6 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        get_applied_loans();
-        get_accepted_loans();
-
 
 
         return view ;
@@ -146,7 +143,6 @@ public class DashboardFragment extends Fragment {
                         loan.setLoanTenure(object2.getInt("loanTenure"));
                         loan.setInterestRate(object2.getDouble("interestRate"));
                         loan.setSecured(object2.getBoolean("secured"));
-
                         loans.add(loan);
                         adapter.notifyDataSetChanged();
                     }
@@ -207,6 +203,7 @@ public class DashboardFragment extends Fragment {
                         loan.setLoanTenure(object2.getInt("loanTenure"));
                         loan.setInterestRate(object2.getDouble("interestRate"));
                         loan.setSecured(object2.getBoolean("secured"));
+                        loans.add(loan);
                         if(loan.getBorrowerUserName().equalsIgnoreCase("tarunstu125")){
                             borrowedAmount+=loan.getLoanAmount();
                             avgBorrowedRate+= (loan.getLoanTenure()*loan.getInterestRate());
@@ -218,7 +215,6 @@ public class DashboardFragment extends Fragment {
                             monthLent+=loan.getLoanTenure();
                             minLent = Math.min(minLent, loan.getLoanTenure());
                         }
-                        loans.add(loan);
                         adapter.notifyDataSetChanged();
                     }
 

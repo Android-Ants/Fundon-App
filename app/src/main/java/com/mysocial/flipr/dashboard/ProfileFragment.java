@@ -68,7 +68,7 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(), ProfileActivity.class);
-                    Log.d("abba", detailsModel.toString());
+                    intent.putExtra("string" , "modify");
                     intent.putExtra("abba", (Serializable) detailsModel);
                     startActivity(intent);
                 }

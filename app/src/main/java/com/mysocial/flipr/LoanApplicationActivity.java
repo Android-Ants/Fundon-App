@@ -113,8 +113,10 @@ public class LoanApplicationActivity extends AppCompatActivity {
                             modelUser = cibil.setProfile(user);
                             if ( modelUser.getCIBIL() == -1 )
                             credit_score.setText(String.valueOf("Not Applicable"));
+
                             else
                             credit_score.setText(String.valueOf(modelUser.getCIBIL()));
+
                             credit_limit.setText("Rs. " + String.valueOf(modelUser.getMaxCredit()));
                             progressDialog.dismiss();
                         }

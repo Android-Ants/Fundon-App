@@ -2,9 +2,7 @@ package com.mysocial.flipr.repositories;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 
 import com.android.volley.AuthFailureError;
@@ -17,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.JsonObject;
+import com.mysocial.flipr.Utils.Constants;
 import com.mysocial.flipr.models.DetailsModel;
 
 import org.json.JSONException;
@@ -33,7 +31,7 @@ public class DashboardRepo {
     private final MutableLiveData<String> message = new MutableLiveData<>();
     private static final DashboardRepo instance = new DashboardRepo() ;
     private RequestQueue requestQueue;
-    private final String GET_PROFILE_URL = "https://codeq-flipr.herokuapp.com/api/profile/get";
+
 
     public static DashboardRepo getInstance() {
         return instance ;
@@ -46,7 +44,7 @@ public class DashboardRepo {
 
         JSONObject object = new JSONObject(params) ;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, GET_PROFILE_URL,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.GET_PROFILE_URL,
                object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

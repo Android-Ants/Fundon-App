@@ -31,8 +31,8 @@ public class LoanApplicationRepo {
     private final MutableLiveData<String> messageCibil = new MutableLiveData<>();
     private final MutableLiveData<User> cibil = new MutableLiveData<>();
     RequestQueue requestQueue;
-    private final String APPLY_URL = "https://codeq-flipr.herokuapp.com/api/loan/create" ;
-    private final String GET_CIBIL ="https://codeq-flipr.herokuapp.com/api/cibil/get";
+//    private final String APPLY_URL = "https://codeq-flipr.herokuapp.com/api/loan/create" ;
+//    private final String GET_CIBIL ="https://codeq-flipr.herokuapp.com/api/cibil/get";
 
 
     public static LoanApplicationRepo getInstance() {
@@ -60,7 +60,7 @@ public class LoanApplicationRepo {
             e.printStackTrace();
         }
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, APPLY_URL ,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.APPLY_URL ,
                 object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -105,7 +105,7 @@ public class LoanApplicationRepo {
 
         JSONObject object = new JSONObject(params);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, GET_CIBIL ,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.GET_CIBIL ,
                 object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

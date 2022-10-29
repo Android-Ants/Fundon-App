@@ -33,7 +33,7 @@ public class DashboardRepo {
     private final MutableLiveData<String> message = new MutableLiveData<>();
     private static final DashboardRepo instance = new DashboardRepo() ;
     private RequestQueue requestQueue;
-    private final String GET_PROFILE_URL = "https://codeq-flipr.herokuapp.com/api/profile/get";
+//    private final String GET_PROFILE_URL = "https://codeq-flipr.herokuapp.com/api/profile/get";
 
     public static DashboardRepo getInstance() {
         return instance ;
@@ -46,7 +46,7 @@ public class DashboardRepo {
 
         JSONObject object = new JSONObject(params) ;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, GET_PROFILE_URL,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.GET_PROFILE_URL,
                object, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

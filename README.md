@@ -1,8 +1,8 @@
 
-# Fundon App ( CodeQ )
+# Fundon App
 
 Fundon, a C2C (Customer to Customer) personal loan lending platform based on MVVM model which can be used be request loan from other users on the application
-and can also lend money to them.\ :)
+and can also lend money to them.
 
 
 ### Features of the Application
@@ -25,7 +25,7 @@ and can also lend money to them.\ :)
 [Download Application Apk from here](https://drive.google.com/drive/u/0/folders/1Y3_H9DHplN7iRJheM_niGfODk8vWAq-R)
 
 
-# 
+# Figma
 
 
 The detailed of every feature can be viewed from the following link:
@@ -72,16 +72,19 @@ The detailed of every feature can be viewed from the following link:
       "npm": "^8.9.0"
       "uuid": "^3.3.3"
 
-
 ## API Documentation
 
 [Api Link : https://codeq-flipr.herokuapp.com/api/](https://codeq-flipr.herokuapp.com/api/)
 
 API Documentation: 
 
-[postman](https://www.getpostman.com/collections/61062ef5bc5361f9ace9)
+[Postman](https://www.getpostman.com/collections/61062ef5bc5361f9ace9)
     
-    https://www.getpostman.com/collections/61062ef5bc5361f9ace9
+    https://www.getpostman.com/collections/61062ef5bc5361f9ace9 
+    
+[Local Postman](https://www.getpostman.com/collections/ee040701f6832d4c613e)
+    
+    https://www.getpostman.com/collections/ee040701f6832d4c613e
     
     
 ---***---***---***---

@@ -25,7 +25,7 @@ and can also lend money to them.
 [Download Application Apk from here](https://drive.google.com/drive/u/0/folders/1Y3_H9DHplN7iRJheM_niGfODk8vWAq-R)
 
 
-# Figma
+## Figma
 
 
 The detailed of every feature can be viewed from the following link:

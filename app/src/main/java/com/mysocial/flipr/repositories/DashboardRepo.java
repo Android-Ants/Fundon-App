@@ -2,9 +2,7 @@ package com.mysocial.flipr.repositories;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 
 import com.android.volley.AuthFailureError;
@@ -17,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.JsonObject;
+import com.mysocial.flipr.Utils.Constants;
 import com.mysocial.flipr.models.DetailsModel;
 
 import org.json.JSONException;

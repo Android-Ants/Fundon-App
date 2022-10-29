@@ -2,10 +2,8 @@ package com.mysocial.flipr.repositories;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -16,10 +14,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.mysocial.flipr.dashboard.DashboardActivity;
+import com.mysocial.flipr.Utils.Constants;
 import com.mysocial.flipr.models.DetailsModel;
-import com.mysocial.flipr.models.User;
-import com.mysocial.flipr.viewmodels.DetailsViewModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;

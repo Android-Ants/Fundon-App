@@ -1,4 +1,4 @@
-package com.mysocial.flipr.repositories;
+package com.mysocial.flipr.Utils;
 
 public class Constants {
 

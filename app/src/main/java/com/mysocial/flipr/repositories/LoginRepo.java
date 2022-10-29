@@ -39,7 +39,7 @@ public class LoginRepo {
         params.put("userName", user.getUserName());
         params.put("password", user.getPassword());
 
-//        String url = "https://codeq-flipr.herokuapp.com/api/auth/signin";
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.Signin_URL,
                 new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
             @Override

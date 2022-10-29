@@ -61,7 +61,7 @@ public class DetailsRepo {
         params.put("isVerified", String.valueOf(model.isVerified()));
         Log.d("params", String.valueOf(params));
 
-//        String url = "https://codeq-flipr.herokuapp.com/api/profile/create";
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.CREATE_PROFILE,
                 new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
             @Override

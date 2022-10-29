@@ -35,7 +35,6 @@ public class OTPRepo {
         Map<String, String> params = new HashMap<>();
         params.put("token", otpModel.getToken());
         params.put("otp", otpModel.getOtp());
-        String url = "https://codeq-flipr.herokuapp.com/api/auth/verify_email";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.Verify_Email,
                 new JSONObject(params), new Response.Listener<JSONObject>() {
             @Override

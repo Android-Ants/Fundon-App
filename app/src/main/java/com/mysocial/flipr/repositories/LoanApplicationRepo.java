@@ -31,8 +31,8 @@ public class LoanApplicationRepo {
     private final MutableLiveData<String> messageCibil = new MutableLiveData<>();
     private final MutableLiveData<User> cibil = new MutableLiveData<>();
     RequestQueue requestQueue;
-//    private final String APPLY_URL = "https://codeq-flipr.herokuapp.com/api/loan/create" ;
-//    private final String GET_CIBIL ="https://codeq-flipr.herokuapp.com/api/cibil/get";
+
+
 
 
     public static LoanApplicationRepo getInstance() {

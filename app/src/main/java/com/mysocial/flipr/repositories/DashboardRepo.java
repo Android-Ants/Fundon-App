@@ -33,7 +33,7 @@ public class DashboardRepo {
     private final MutableLiveData<String> message = new MutableLiveData<>();
     private static final DashboardRepo instance = new DashboardRepo() ;
     private RequestQueue requestQueue;
-//    private final String GET_PROFILE_URL = "https://codeq-flipr.herokuapp.com/api/profile/get";
+
 
     public static DashboardRepo getInstance() {
         return instance ;

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.mysocial.flipr.cibil.User;
+import com.mysocial.flipr.dashboard.DashboardFragment;
 import com.mysocial.flipr.databinding.ActivityReminderBinding;
 import com.mysocial.flipr.models.DetailsModel;
 
@@ -33,6 +35,7 @@ public class ReminderActivity extends AppCompatActivity {
     private DetailsModel detailsModel ;
     private RequestQueue requestQueue ;
     private ProgressDialog progressDialog ;
+    private ImageView button;
     private final String URL = "https://codeq-flipr.herokuapp.com/api/loan/sendRemainder";
 
     @Override
@@ -45,6 +48,17 @@ public class ReminderActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please Wait ...");
+        button=(ImageView) findViewById(R.id.back_btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(getFragmentManager().getBackStackEntryCount() > 0) {
+                    getFragmentManager().popBackStack();
+                }
+                    ReminderActivity.super.onBackPressed();
+
+            }
+        });
 
         binding.sendReminder.setOnClickListener(new View.OnClickListener() {
             @Override

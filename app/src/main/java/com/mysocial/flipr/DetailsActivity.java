@@ -59,8 +59,8 @@ public class DetailsActivity extends AppCompatActivity {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                // We will be redirected to choose pdf
-                galleryIntent.setType("application/pdf");
+                // We will be redirected to choose image
+                galleryIntent.setType("application/jpg");
                 startActivityForResult(galleryIntent, 1);
             }
         });
@@ -71,8 +71,8 @@ public class DetailsActivity extends AppCompatActivity {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                // We will be redirected to choose pdf
-                galleryIntent.setType("application/pdf");
+                // We will be redirected to choose image
+                galleryIntent.setType("application/jpg");
                 startActivityForResult(galleryIntent, 2);
             }
         });
@@ -83,8 +83,8 @@ public class DetailsActivity extends AppCompatActivity {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                // We will be redirected to choose pdf
-                galleryIntent.setType("application/pdf");
+                // We will be redirected to choose image
+                galleryIntent.setType("application/jpg");
                 startActivityForResult(galleryIntent, 3);
             }
         });
@@ -118,15 +118,15 @@ public class DetailsActivity extends AppCompatActivity {
             switch (requestCode){
                 case 1:
                     aadharFile = imageuri;
-                    binding.aadharImageUploadText.setText(fileName+".pdf");
+                    binding.aadharImageUploadText.setText(fileName+".jpg");
                     break;
                 case 2:
                     panFile = imageuri;
-                    binding.panImageUploadText.setText(fileName+".pdf");
+                    binding.panImageUploadText.setText(fileName+".jpg");
                     break;
                 case 3:
                     banKDetailsFile = imageuri;
-                    binding.bankDetailImageUploadText.setText(fileName+".pdf");
+                    binding.bankDetailImageUploadText.setText(fileName+".jpg");
                     break;
             }
 
@@ -137,8 +137,8 @@ public class DetailsActivity extends AppCompatActivity {
             StorageReference storageReference = FirebaseStorage.getInstance().getReference();
             final String messagePushID = timestamp;
 
-            // Here we are uploading the pdf in firebase storage with the name of current time
-            final StorageReference filepath = storageReference.child(messagePushID + "." + "pdf");
+            // Here we are uploading the image in firebase storage with the name of current time
+            final StorageReference filepath = storageReference.child(messagePushID + "." + "jpg");
             filepath.putFile(imageuri).continueWithTask((Continuation) task -> {
                 if (!task.isSuccessful()) {
                     throw task.getException();

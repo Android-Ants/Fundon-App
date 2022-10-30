@@ -79,8 +79,9 @@ public class DashboardFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Please wait until data is loaded");
+        progressDialog.setMessage("Please wait until data is being loaded");
         progressDialog.setIndeterminate(true);
+        progressDialog.show();
         get_applied_loans();
         get_accepted_loans();
     }

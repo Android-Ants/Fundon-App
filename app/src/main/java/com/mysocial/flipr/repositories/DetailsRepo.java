@@ -2,10 +2,8 @@ package com.mysocial.flipr.repositories;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -16,10 +14,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.mysocial.flipr.dashboard.DashboardActivity;
+import com.mysocial.flipr.Utils.Constants;
 import com.mysocial.flipr.models.DetailsModel;
-import com.mysocial.flipr.models.User;
-import com.mysocial.flipr.viewmodels.DetailsViewModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,8 +57,8 @@ public class DetailsRepo {
         params.put("isVerified", String.valueOf(model.isVerified()));
         Log.d("params", String.valueOf(params));
 
-        String url = "https://codeq-flipr.herokuapp.com/api/profile/create";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.CREATE_PROFILE,
                 new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

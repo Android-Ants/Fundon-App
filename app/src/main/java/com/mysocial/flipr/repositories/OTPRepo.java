@@ -1,7 +1,6 @@
 package com.mysocial.flipr.repositories;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
@@ -12,9 +11,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.mysocial.flipr.Utils.Constants;
 import com.mysocial.flipr.models.OTPModel;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -35,8 +34,7 @@ public class OTPRepo {
         Map<String, String> params = new HashMap<>();
         params.put("token", otpModel.getToken());
         params.put("otp", otpModel.getOtp());
-        String url = "https://codeq-flipr.herokuapp.com/api/auth/verify_email";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.Verify_Email,
                 new JSONObject(params), new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

@@ -3,7 +3,6 @@ package com.mysocial.flipr.repositories;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -13,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.mysocial.flipr.Utils.Constants;
 import com.mysocial.flipr.models.User;
 
 import org.json.JSONException;
@@ -39,8 +39,8 @@ public class LoginRepo {
         params.put("userName", user.getUserName());
         params.put("password", user.getPassword());
 
-        String url = "https://codeq-flipr.herokuapp.com/api/auth/signin";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.Signin_URL,
                 new JSONObject(params), new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

@@ -129,7 +129,7 @@ public class DashboardFragment extends Fragment {
 
     private void get_applied_loans ()
     {
-
+        progressDialog.dismiss();
         Map<String, String> params = new HashMap<>();
         params.put("borrowerUserName", detailsModel.getUserName() );
         params.put("borrowerEmail", detailsModel.getEmail() );

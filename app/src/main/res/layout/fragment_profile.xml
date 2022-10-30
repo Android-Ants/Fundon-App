@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:backgroundTint="@color/card_background">
+    android:backgroundTint="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="Profile"
+                android:textColor="@color/primary"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/edit11"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="195dp"
+                android:background="@drawable/edit">
+
+            </ImageView>
+            <ImageView
+                android:id="@+id/logout11"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/logout">
+
+            </ImageView>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/card_background"
+        android:layout_width="410dp"
+        android:layout_height="580dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504"
         tools:context=".dashboard.ui.notifications.ProfileFragment">
 
 
@@ -21,72 +77,77 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/montserrat"
-            android:text="PROFILE"
+            android:text=""
             android:textColor="#6765E8"
-            android:textSize="20sp"
+            android:textSize="0sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginTop="56dp"
             app:cardCornerRadius="100dp"
             app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
 
             <ImageView
                 android:id="@+id/profilephoto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:src="@drawable/download" />
-
-
         </androidx.cardview.widget.CardView>
-
 
         <TextView
             android:id="@+id/disp_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tarunstu125"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="52dp"
             android:padding="8dp"
+            android:paddingHorizontal="8dp"
+            android:text="tarun"
             android:textColor="#353535"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/disp_name"
-            app:layout_constraintTop_toBottomOf="@+id/disp_name" />
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/disp_name"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:background="#A6A6A6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView" />
-
+            app:layout_constraintTop_toBottomOf="@+id/disp_username" />
 
         <TextView
             android:id="@+id/disp_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="52dp"
             android:paddingHorizontal="8dp"
-            android:text="Name"
+            android:text="Name:"
             android:textColor="@color/text_color"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/cardView"
-            app:layout_constraintTop_toTopOf="@+id/cardView" />
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <TextView
             android:id="@+id/disp_email"
@@ -140,7 +201,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
-            android:text="Email"
+            android:text="Email:"
             android:textColor="@color/subhead"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +211,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="Mobile"
+            android:text="Mobile:"
             android:textColor="@color/subhead"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -161,7 +222,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="Address"
+            android:text="Address:"
             android:textColor="@color/subhead"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -171,51 +232,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="Occupation"
+            android:text="Occupation:"
             android:textColor="@color/subhead"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/disp_occupation" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/edit"
-            android:layout_width="300dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/button_gradient"
-            android:elevation="10dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Edit"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/disp_address"
-            app:layout_constraintVertical_bias="0.21" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/signOut"
-            android:layout_width="300dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/button_gradient"
-            android:elevation="10dp"
-            android:fontFamily="@font/montserrat"
-            android:text="SignOut"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

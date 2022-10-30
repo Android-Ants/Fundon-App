@@ -9,8 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.mysocial.flipr.MainActivity;
@@ -20,17 +23,20 @@ import com.mysocial.flipr.models.DetailsModel;
 
 import java.io.Serializable;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment{
 
     DetailsModel detailsModel;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-
+    private ImageView edit1;
+    private ImageView logout1;
+    private Toolbar toolbar;
 
     public ProfileFragment(DetailsModel detailsModel , Context context) {
         this.detailsModel = detailsModel;
         sharedPreferences = context.getSharedPreferences("Fundon", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
     }
 
     @Override
@@ -41,7 +47,31 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootview =inflater.inflate(R.layout.fragment_profile, container, false);
+        toolbar=(Toolbar) rootview.findViewById(R.id.toolbar3);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        edit1=(ImageView)toolbar.getRootView().findViewById(R.id.edit11);
+        logout1=(ImageView) toolbar.getRootView().findViewById(R.id.logout11);
+        edit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ProfileActivity.class);
+                intent.putExtra("string" , "modify");
+                intent.putExtra("abba", (Serializable) detailsModel);
+                startActivity(intent);
+            }
+        });
+        logout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putString("token" , "ansh");
+                editor.commit();
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+        return rootview;
     }
 
     @Override
@@ -63,28 +93,6 @@ public class ProfileFragment extends Fragment {
             occupation.setText(detailsModel.getOccupation());
             adress.setText(detailsModel.getAddress());
 
-            Button edit = view.findViewById(R.id.edit);
-            edit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getContext(), ProfileActivity.class);
-                    intent.putExtra("string" , "modify");
-                    intent.putExtra("abba", (Serializable) detailsModel);
-                    startActivity(intent);
-                }
-            });
-
-            Button signOut = view.findViewById(R.id.signOut);
-            signOut.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    editor.putString("token" , "ansh");
-                    editor.commit();
-                    Intent intent = new Intent(getContext(), MainActivity.class);
-                    startActivity(intent);
-                    getActivity().finish();
-                }
-            });
 
         }
     }

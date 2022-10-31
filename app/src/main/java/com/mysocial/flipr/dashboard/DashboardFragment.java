@@ -1,5 +1,6 @@
 package com.mysocial.flipr.dashboard;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,6 +55,7 @@ public class DashboardFragment extends Fragment {
     private String token ;
     private RequestQueue requestQueue ;
     private TransactionsAdapter adapter ;
+    private ProgressDialog progressDialog;
 
     private int lentAmount, borrowedAmount, avgLentRate, avgBorrowedRate, monthBorrowed, monthLent, minBorrow, minLent;
 
@@ -76,6 +78,10 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Please wait until data is being loaded");
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
         get_applied_loans();
         get_accepted_loans();
     }
@@ -123,7 +129,7 @@ public class DashboardFragment extends Fragment {
 
     private void get_applied_loans ()
     {
-
+        progressDialog.dismiss();
         Map<String, String> params = new HashMap<>();
         params.put("borrowerUserName", detailsModel.getUserName() );
         params.put("borrowerEmail", detailsModel.getEmail() );

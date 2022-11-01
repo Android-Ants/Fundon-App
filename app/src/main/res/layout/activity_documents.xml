@@ -72,37 +72,6 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/aadharUploadImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:drawableStart="@drawable/ic_cloud_upload"
-                        android:drawablePadding="6dp"
-                        android:padding="5dp"
-                        android:text="Image"
-                        android:textColor="@color/subhead"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/aadharUploadPdf"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/aadharUploadText" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/aadharUploadPdf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:drawableStart="@drawable/ic_cloud_upload"
-                        android:drawablePadding="6dp"
-                        android:padding="5dp"
-                        android:text="Pdf "
-                        android:textColor="@color/subhead"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/aadharUploadImage"
-                        app:layout_constraintTop_toBottomOf="@+id/aadharUploadText" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -141,37 +110,6 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/panUploadimage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:drawableStart="@drawable/ic_cloud_upload"
-                        android:drawablePadding="6dp"
-                        android:text="Image"
-                        android:padding="5dp"
-                        android:textColor="@color/subhead"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/panUploadpdf"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/panUploadText" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/panUploadpdf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:drawableStart="@drawable/ic_cloud_upload"
-                        android:drawablePadding="6dp"
-                        android:text="Pdf"
-                        android:padding="5dp"
-                        android:textColor="@color/subhead"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/panUploadimage"
-                        app:layout_constraintTop_toBottomOf="@+id/panUploadText" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -209,35 +147,6 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/bankDetailUploadImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:drawableStart="@drawable/ic_cloud_upload"
-                        android:drawablePadding="6dp"
-                        android:text="Image"
-                        android:textColor="@color/subhead"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/bankDetailUploadPdf"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/bankDetailUploadText" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/bankDetailUploadPdf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:drawableStart="@drawable/ic_cloud_upload"
-                        android:drawablePadding="6dp"
-                        android:text="Pdf"
-                        android:textColor="@color/subhead"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/bankDetailUploadImage"
-                        app:layout_constraintTop_toBottomOf="@+id/bankDetailUploadText" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

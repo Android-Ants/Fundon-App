@@ -41,7 +41,7 @@
             android:backgroundTint="@color/white">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/aadharImageUpload"
+                android:id="@+id/aadharUpload"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
@@ -52,20 +52,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/aadharImageUploadText"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:textColor="@color/subhead"
-                    android:drawableStart="@drawable/ic_cloud_upload"
-                    android:drawablePadding="6dp"
-                    android:text="Click here to upload Aadhar card" />
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/aadharUploadText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:drawableStart="@drawable/ic_cloud_upload"
+                        android:drawablePadding="6dp"
+                        android:padding="5dp"
+                        android:text="Click here to upload Aadhar card"
+                        android:textColor="@color/subhead"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/panImageUpload"
+                android:id="@+id/panUpload"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
@@ -74,23 +88,36 @@
                 android:layout_marginTop="36dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/aadharImageUpload">
+                app:layout_constraintTop_toBottomOf="@id/aadharUpload">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/panImageUploadText"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:textColor="@color/subhead"
-                    android:drawableStart="@drawable/ic_cloud_upload"
-                    android:drawablePadding="6dp"
-                    android:text="Click here to upload PAN card" />
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/panUploadText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:drawableStart="@drawable/ic_cloud_upload"
+                        android:drawablePadding="6dp"
+                        android:padding="5dp"
+                        android:text="Click here to upload PAN card"
+                        android:textColor="@color/subhead"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/bankDetailImageUpload"
+                android:id="@+id/bankDetailUpload"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
@@ -99,17 +126,29 @@
                 android:layout_marginTop="36dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/panImageUpload">
+                app:layout_constraintTop_toBottomOf="@id/panUpload">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/bankDetailImageUploadText"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/subhead"
-                    android:layout_margin="12dp"
-                    android:drawableStart="@drawable/ic_cloud_upload"
-                    android:drawablePadding="6dp"
-                    android:text="Click here to upload PassBook/\nCancelled cheque" />
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/bankDetailUploadText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:drawableStart="@drawable/ic_cloud_upload"
+                        android:drawablePadding="6dp"
+                        android:text="Click here to upload PassBook/\nCancelled cheque"
+                        android:textColor="@color/subhead"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.cardview.widget.CardView>
 

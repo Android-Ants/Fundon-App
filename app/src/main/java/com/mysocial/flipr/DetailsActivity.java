@@ -53,42 +53,41 @@ public class DetailsActivity extends AppCompatActivity {
 
         HashMap<String, String> params = (HashMap<String, String>) getIntent().getSerializableExtra("2nd page");
 
-        binding.aadharImageUpload.setOnClickListener(new View.OnClickListener() {
+        binding.aadharUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                // We will be redirected to choose pdf
-                galleryIntent.setType("application/pdf");
+                // We will be redirected to choose image/pdf
+                galleryIntent.setType("application/*");
                 startActivityForResult(galleryIntent, 1);
             }
         });
 
-        binding.panImageUpload.setOnClickListener(new View.OnClickListener() {
+        binding.panUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                // We will be redirected to choose pdf
-                galleryIntent.setType("application/pdf");
+                // We will be redirected to choose image/pdf
+                galleryIntent.setType("application/*");
                 startActivityForResult(galleryIntent, 2);
             }
         });
 
-        binding.bankDetailImageUpload.setOnClickListener(new View.OnClickListener() {
+        binding.bankDetailUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
-                // We will be redirected to choose pdf
-                galleryIntent.setType("application/pdf");
+                // We will be redirected to choose images/pdf
+                galleryIntent.setType("application/*");
                 startActivityForResult(galleryIntent, 3);
             }
         });
-
         binding.uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,27 +116,27 @@ public class DetailsActivity extends AppCompatActivity {
             switch (requestCode){
                 case 1:
                     aadharFile = imageuri;
-                    binding.aadharImageUploadText.setText(fileName+".pdf");
+                    binding.aadharUploadText.setText(fileName);
                     break;
                 case 2:
                     panFile = imageuri;
-                    binding.panImageUploadText.setText(fileName+".pdf");
+                    binding.panUploadText.setText(fileName);
                     break;
                 case 3:
                     banKDetailsFile = imageuri;
-                    binding.bankDetailImageUploadText.setText(fileName+".pdf");
+                    binding.bankDetailUploadText.setText(fileName);
                     break;
             }
 
             // this will show message uploading
-            // while pdf is uploading
+            // while file is uploading
             dialog.show();
             final String timestamp = "" + System.currentTimeMillis();
             StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-            final String messagePushID = timestamp;
 
-            // Here we are uploading the pdf in firebase storage with the name of current time
-            final StorageReference filepath = storageReference.child(messagePushID + "." + "pdf");
+            String message= timestamp;
+            // Here we are uploading the files in firebase storage with the name of current time
+            final StorageReference filepath = storageReference.child(message);
             filepath.putFile(imageuri).continueWithTask((Continuation) task -> {
                 if (!task.isSuccessful()) {
                     throw task.getException();
@@ -154,17 +153,15 @@ public class DetailsActivity extends AppCompatActivity {
                         switch (requestCode){
                             case 1:
                                 aadharFileLink = task.getResult().toString();
-                                binding.aadharImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
+                                binding.aadharUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
                                 break;
                             case 2:
                                 panFileLink = task.getResult().toString();
-                                binding.panImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
-
+                                binding.panUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
                                 break;
                             case 3:
                                 banKDetailsFileLink = task.getResult().toString();
-                                binding.bankDetailImageUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
-
+                                binding.bankDetailUploadText.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
                                 break;
                         }
                         Log.d("files","Sucess");
